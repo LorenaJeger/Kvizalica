@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_green">#60DFB0</color>
+    <color name="background">#B3E5FC</color>
+    <color name="ljubicasta">#A74AC8</color>
+    <color name="narancasta">#FF8D5D</color>
 </resources>

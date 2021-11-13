@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica/app/src/main/res/layout/activity_main.xml" value="0.136" />
+        <entry key="..\:/Users/Reni/AndroidStudioProjects/Kvizalica/app/src/main/res/drawable/choose_category_rounded_button.xml" value="0.2703125" />
+        <entry key="..\:/Users/Reni/AndroidStudioProjects/Kvizalica/app/src/main/res/drawable/play_rounded_button.xml" value="0.2703125" />
         <entry key="..\:/Users/Reni/AndroidStudioProjects/Kvizalica/app/src/main/res/drawable/rounded_button.xml" value="0.51171875" />
         <entry key="..\:/Users/Reni/AndroidStudioProjects/Kvizalica/app/src/main/res/drawable/rounded_corners.xml" value="0.2703125" />
+        <entry key="..\:/Users/Reni/AndroidStudioProjects/Kvizalica/app/src/main/res/layout/activity_choose_category.xml" value="0.264" />
         <entry key="..\:/Users/Reni/AndroidStudioProjects/Kvizalica/app/src/main/res/layout/activity_main.xml" value="0.264" />
       </map>
     </option>

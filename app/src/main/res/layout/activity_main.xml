@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B3E5FC"
+    android:background="@color/background"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -13,7 +13,7 @@
         android:id="@+id/naslov_glavni"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="250dp"
         android:fontFamily="@font/cherryBomb"
         android:text="@string/pocetni_screen"
         android:textAlignment="center"
@@ -25,7 +25,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:background="@drawable/rounded_button"
+        android:background="@drawable/play_rounded_button"
         android:fontFamily="@font/coiny"
         android:text="@string/button_igraj"
         android:textAlignment="center"
@@ -36,7 +36,7 @@
         android:id="@+id/slika_pocetna"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="82dp"
         app:srcCompat="@drawable/pocetna" />
 
 
