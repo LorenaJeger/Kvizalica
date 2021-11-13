@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Kvizalica</string>
+    <string name="pocetni_screen">Kvizalica</string>
+    <string name="button_igraj">Igraj</string>
 </resources>
