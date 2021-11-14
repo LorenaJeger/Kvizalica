@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "702758269294",
+    "project_id": "kvizalicajegervosten",
+    "storage_bucket": "kvizalicajegervosten.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702758269294:android:c128b9582a915d3ca7517f",
+        "android_client_info": {
+          "package_name": "android.unipu.kvizalica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702758269294-avngth5g4ske1tgutdsp2f1cpicd7m16.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "android.unipu.kvizalica",
+            "certificate_hash": "1ec9f2185e1951cec491036c733f7569902d3b37"
+          }
+        },
+        {
+          "client_id": "702758269294-9em17djtm6l8qhoh0ra618bsc8evr7gj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0IVxLeSjJGZO-Y-tug81eLrY3z8CoQyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702758269294-9em17djtm6l8qhoh0ra618bsc8evr7gj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

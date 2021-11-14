@@ -4,7 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica/app/src/main/res/layout/activity_main.xml" value="0.136" />
+        <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica_/app/src/main/res/drawable/choose_category_rounded_button.xml" value="0.1875" />
+        <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica_/app/src/main/res/drawable/gumbici_background.xml" value="0.1" />
+        <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica_/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1875" />
+        <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica_/app/src/main/res/drawable/play_rounded_button.xml" value="0.1875" />
+        <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica_/app/src/main/res/font/baloo.xml" value="0.2015625" />
+        <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica_/app/src/main/res/layout/activity_choose_category.xml" value="0.1" />
+        <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica_/app/src/main/res/layout/activity_kviz.xml" value="0.161231884057971" />
         <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica_/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Lorena/AndroidStudioProjects/Kvizalica_/app/src/main/res/layout/activity_maps.xml" value="0.1" />
       </map>
     </option>
   </component>
