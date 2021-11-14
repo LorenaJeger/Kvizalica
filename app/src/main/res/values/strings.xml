@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Kvizalica</string>
-    <string name="title_activity_maps">MapsActivity</string>
+    <string name="pocetni_screen">Kvizalica</string>
+    <string name="button_igraj">Igraj</string>
+    <string name="odaberi_kategoriju">Odaberi kategoriju:</string>
+    <string name="naslov_brojevi">Brojevi</string>
+    <string name="naslov_zivotinje">Životinje</string>
+    <string name="naslov_voce">Voće</string>
+    <string name="naslov_povrce">Povrće</string>
 </resources>
