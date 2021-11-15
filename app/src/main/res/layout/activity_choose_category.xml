@@ -19,7 +19,7 @@
             android:id="@+id/odaberiKategorijuText"
             android:layout_width="282dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/cherryBomb"
+            android:fontFamily="@font/cherrybomb"
             android:text="@string/odaberi_kategoriju"
             android:textAlignment="center"
             android:textColor="@color/ljubicasta"
