@@ -31,7 +31,9 @@ public class QuestionsBlank {
             case "povrce":
                 return povrce();
 
-        }}
+        }
+        return null;
+    }
 
 
 }
