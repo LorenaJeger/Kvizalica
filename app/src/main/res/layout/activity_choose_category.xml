@@ -20,10 +20,11 @@
             android:layout_width="282dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/cherrybomb"
+            android:gravity="center_horizontal"
             android:text="@string/odaberi_kategoriju"
             android:textAlignment="center"
             android:textColor="@color/ljubicasta"
-            android:textSize="40sp"/>
+            android:textSize="40sp" />
 
     </LinearLayout>
 
