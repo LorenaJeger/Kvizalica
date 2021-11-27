@@ -13,6 +13,7 @@
         android:theme="@style/Theme.Kvizalica">
         <activity
             android:name=".VoceActivity"
+            android:parentActivityName=".ChooseCategoryActivity"
             android:exported="false" />
         <activity
             android:name=".KvizResults"
@@ -20,6 +21,7 @@
         <activity
             android:name=".ChooseCategoryActivity"
             android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
