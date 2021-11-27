@@ -18,7 +18,7 @@
         android:text="@string/pocetni_screen"
         android:textAlignment="center"
         android:textColor="#FAFAFA"
-        android:textSize="54sp"
+        android:textSize="115sp"
         app:layout_constraintBottom_toTopOf="@id/guideline_naslov_donji"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,12 +32,13 @@
         android:fontFamily="@font/coiny"
         android:text="@string/button_igraj"
         android:textColor="#FAFAFA"
-        android:textSize="22sp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@id/guideline_igraj_donji"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_igraj_desni"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/guideline_igraj_lijevi"
-        app:layout_constraintTop_toBottomOf="@id/guideline_igraj_gornji" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonIgraj_desni"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonIgraj_lijevi"
+        app:layout_constraintTop_toBottomOf="@id/guideline_igraj_gornji"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/slika_pocetna"
@@ -94,14 +95,14 @@
         app:layout_constraintGuide_percent="0.71" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_igraj_lijevi"
+        android:id="@+id/buttonIgraj_lijevi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_igraj_desni"
+        android:id="@+id/buttonIgraj_desni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

@@ -34,9 +34,9 @@
         android:textColor="#FAFAFA"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@id/guideline_igraj_donji"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_igraj_desni"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineOkomito_desni"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/guideline_igraj_lijevi"
+        app:layout_constraintStart_toStartOf="@+id/guidelineOkomito_lijevi"
         app:layout_constraintTop_toBottomOf="@id/guideline_igraj_gornji" />
 
     <ImageView
@@ -94,14 +94,14 @@
         app:layout_constraintGuide_percent="0.71" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_igraj_lijevi"
+        android:id="@+id/guidelineOkomito_lijevi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_igraj_desni"
+        android:id="@+id/guidelineOkomito_desni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
