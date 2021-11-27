@@ -26,7 +26,7 @@ public class ChooseCategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // pozivanje aktivnosti ChooseCategory
-                Intent intent = new Intent(ChooseCategoryActivity.this, KvizActivity.class);
+                Intent intent = new Intent(ChooseCategoryActivity.this, VoceActivity.class);
                 startActivity(intent);
             }
         });
