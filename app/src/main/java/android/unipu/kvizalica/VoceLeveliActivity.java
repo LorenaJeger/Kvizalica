@@ -8,27 +8,32 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class ChooseCategoryActivity extends AppCompatActivity {
+public class VoceLeveliActivity extends AppCompatActivity {
 
-    ImageButton Voce;
+
+
+
+    Button Level1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_category);
+        setContentView(R.layout.activity_voce_leveli);
 
 
         // za gumb Voce
-        Voce = findViewById(R.id.slika_kategorije_voce);
+        Level1 = findViewById(R.id.voce_level1);
 
         // dodavanje listenera za gumb Igraj
-        Voce.setOnClickListener(new View.OnClickListener() {
+        Level1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // pozivanje aktivnosti ChooseCategory
-                Intent intent = new Intent(ChooseCategoryActivity.this, VoceLeveliActivity.class);
+                Intent intent = new Intent(VoceLeveliActivity.this, VocePitanjaLevel1Activity.class);
                 startActivity(intent);
             }
         });
     }
+
+
 }

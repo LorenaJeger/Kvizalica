@@ -12,21 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kvizalica">
         <activity
-            android:name=".VoceActivity"
-            android:parentActivityName=".ChooseCategoryActivity"
+            android:name=".VocePitanjaLevel1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".VoceLeveliActivity"
             android:exported="false" />
         <activity
             android:name=".KvizResults"
             android:exported="false" />
         <activity
             android:name=".ChooseCategoryActivity"
-            android:screenOrientation="portrait"
+            android:exported="false"
             android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
