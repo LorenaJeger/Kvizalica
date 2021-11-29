@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ChooseCategoryActivity">
+
+
+    <TextView
+        android:id="@+id/odaberiKategorijuText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/cherrybombregular"
+        android:gravity="center_horizontal"
+        android:text="@string/odaberi_kategoriju"
+        android:textAlignment="center"
+        android:textColor="@color/ljubicasta"
+        android:textSize="90sp"
+        app:layout_constraintBottom_toTopOf="@+id/odaberiKategoriju_donji"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/odaberiKategoriju_gornji" />
+
+
+    <ImageButton
+        android:id="@+id/slika_kategorije_brojevi"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/choose_category_rounded_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/brojevi"
+        app:layout_constraintBottom_toTopOf="@+id/kategorijaBrojeviZivotinje_donji"
+        app:layout_constraintEnd_toStartOf="@+id/slika_kategorije_zivotinje"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/kategorijaBrojeviZivotinje_gornji"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/slika_kategorije_zivotinje"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/choose_category_rounded_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/zivotinje"
+        app:layout_constraintBottom_toTopOf="@+id/kategorijaBrojeviZivotinje_donji"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/slika_kategorije_brojevi"
+        app:layout_constraintStart_toStartOf="@+id/guidelineOkomiti_sredina"
+        app:layout_constraintTop_toTopOf="@+id/kategorijaBrojeviZivotinje_gornji"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <TextView
+        android:id="@+id/naslov_kategorije_brojevi"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/baloo"
+        android:gravity="center_horizontal"
+        android:text="@string/naslov_brojevi"
+        android:textColor="@color/narancasta"
+        android:textSize="67sp"
+        app:layout_constraintBottom_toTopOf="@+id/tekstBrojeviZivotinje_donji"
+        app:layout_constraintEnd_toStartOf="@+id/naslov_kategorije_zivotinje"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/kategorijaBrojeviZivotinje_donji" />
+
+    <TextView
+        android:id="@+id/naslov_kategorije_zivotinje"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/baloo"
+        android:gravity="center_horizontal"
+        android:text="@string/naslov_zivotinje"
+        android:textColor="@color/narancasta"
+        android:textSize="67sp"
+        app:layout_constraintBottom_toTopOf="@+id/tekstBrojeviZivotinje_donji"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/naslov_kategorije_brojevi"
+        app:layout_constraintStart_toStartOf="@+id/guidelineOkomiti_sredina"
+        app:layout_constraintTop_toTopOf="@+id/kategorijaBrojeviZivotinje_donji" />
+
+
+    <ImageButton
+        android:id="@+id/slika_kategorije_voce"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/choose_category_rounded_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/voce"
+        app:layout_constraintBottom_toTopOf="@+id/kategorijaVocePovrce_donji"
+        app:layout_constraintEnd_toStartOf="@+id/slika_kategorije_povrce"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/kategorijaVocePovrce_gornji"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/slika_kategorije_povrce"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/choose_category_rounded_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/povrce"
+        app:layout_constraintBottom_toTopOf="@+id/kategorijaVocePovrce_donji"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/slika_kategorije_voce"
+        app:layout_constraintStart_toStartOf="@+id/guidelineOkomiti_sredina"
+        app:layout_constraintTop_toTopOf="@+id/kategorijaVocePovrce_gornji"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <TextView
+        android:id="@+id/naslov_kategorije_voce"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/baloo"
+        android:text="@string/naslov_voce"
+        android:textColor="@color/narancasta"
+        android:textSize="67sp"
+        app:layout_constraintBottom_toTopOf="@+id/tekstVocePovrce_donji"
+        app:layout_constraintEnd_toStartOf="@+id/naslov_kategorije_povrce"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/kategorijaVocePovrce_donji"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/naslov_kategorije_povrce"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/baloo"
+        android:text="@string/naslov_povrce"
+        android:textColor="@color/narancasta"
+        android:textSize="67sp"
+        app:layout_constraintBottom_toTopOf="@+id/tekstVocePovrce_donji"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/naslov_kategorije_voce"
+        app:layout_constraintStart_toStartOf="@+id/guidelineOkomiti_sredina"
+        app:layout_constraintTop_toTopOf="@+id/kategorijaVocePovrce_donji"
+        android:gravity="center_horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/odaberiKategoriju_gornji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16142271" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/odaberiKategoriju_donji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.29138166" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/kategorijaBrojeviZivotinje_gornji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36935705" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/kategorijaBrojeviZivotinje_donji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.53214777" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tekstBrojeviZivotinje_donji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6019152" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineOkomiti_sredina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/kategorijaVocePovrce_gornji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6607387" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/kategorijaVocePovrce_donji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83173734" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tekstVocePovrce_donji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.89056087" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
