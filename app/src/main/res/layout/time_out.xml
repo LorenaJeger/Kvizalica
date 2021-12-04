@@ -1,41 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="324dp"
     android:layout_gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
-    app:cardBackgroundColor="#ff9999"
-    android:layout_height="200dp">
+    app:cardBackgroundColor="#F9F7CA"
+    android:layout_height="463dp">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_gravity="center"
-    android:gravity="center" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center" >
+
+        <ImageView
+            android:layout_width="124dp"
+            android:layout_height="124dp"
+            app:srcCompat="@drawable/time_out_satic"
+            />
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Isteklo je vrijeme"
+        android:fontFamily="@font/cherrybombregular"
+        android:gravity="center_horizontal"
+        android:text="Vrijeme je isteklo!"
         android:textColor="@color/black"
         android:layout_marginTop="25dp"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textStyle="bold"
 
         />
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:background="#4BAE4F"
         android:gravity="center"
-        android:text="Ponovo Igraj"
+        android:text="OK"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:fontFamily="@font/cherrybombregular"
+
 />
 </LinearLayout>
 
