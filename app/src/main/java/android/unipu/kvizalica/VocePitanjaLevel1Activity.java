@@ -35,7 +35,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
 
         Hooks();
         
-      
+
         PitanjaLista=listapitanja;
         Collections.shuffle(PitanjaLista);
         modelclass=listapitanja.get(index);
