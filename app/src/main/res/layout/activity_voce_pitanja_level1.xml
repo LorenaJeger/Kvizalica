@@ -24,6 +24,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_progressbar_gornji" />
 
     <androidx.cardview.widget.CardView
+
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardBackgroundColor="@android:color/transparent"
@@ -81,6 +82,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardpitanje"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardBackgroundColor="@android:color/transparent"
@@ -111,6 +113,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardodg1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardBackgroundColor="@android:color/transparent"
@@ -123,7 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_odgovor1"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -131,7 +134,7 @@
                 android:fontFamily="@font/balootammudu"
                 android:text="Jabuka"
                 android:textColor="#FF8D5D"
-                android:textSize="25sp"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -143,6 +146,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardodg2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardBackgroundColor="@android:color/transparent"
@@ -155,7 +159,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_odgovor2"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -163,7 +167,7 @@
                 android:fontFamily="@font/balootammudu"
                 android:text="Trešnja"
                 android:textColor="#FF8D5D"
-                android:textSize="25sp"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -175,6 +179,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardodg3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardBackgroundColor="@android:color/transparent"
@@ -187,7 +192,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_odgovor3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -195,7 +200,7 @@
                 android:fontFamily="@font/balootammudu"
                 android:text="Jagoda"
                 android:textColor="#FF8D5D"
-                android:textSize="25sp"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -207,6 +212,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardodg4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardBackgroundColor="@android:color/transparent"
@@ -219,7 +225,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_odgovor4"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -227,7 +233,7 @@
                 android:fontFamily="@font/balootammudu"
                 android:text="Kivi"
                 android:textColor="#FF8D5D"
-                android:textSize="25sp"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

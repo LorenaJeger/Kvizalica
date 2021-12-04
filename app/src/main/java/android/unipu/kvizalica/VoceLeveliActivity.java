@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class VoceLeveliActivity extends AppCompatActivity {
     Button buttonLevel1, buttonLevel2, buttonLevel3;
+
+   public static ArrayList<ModelClass> listapitanja;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +20,9 @@ public class VoceLeveliActivity extends AppCompatActivity {
         setContentView(R.layout.activity_voce_leveli);
 
 
+        listapitanja= new ArrayList<>();
+        listapitanja.add(new ModelClass("koje je voce zeleno","kivi", "banana","jabuka","jagoda","kivi","slika"));
+        listapitanja.add(new ModelClass("koje je voce žuto","kivi", "banana","jabuka","jagoda","banana","slika"));
         // za gumb Level 1
         buttonLevel1 = findViewById(R.id.voce_level1);
 
