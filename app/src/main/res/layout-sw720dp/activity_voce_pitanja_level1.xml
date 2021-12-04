@@ -26,6 +26,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/guideline_tekstPitanje_donji"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +45,7 @@
                 android:gravity="center_horizontal"
                 android:text="Pitanje 1/6"
                 android:textColor="@color/ljubicasta"
-                android:textSize="75dp"
+                android:textSize="80dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +56,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,8 +83,10 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardpitanje"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +105,7 @@
                 android:gravity="center_horizontal"
                 android:text="Koje voće se nalazi na slici?"
                 android:textColor="@color/ljubicasta"
-                android:textSize="75dp"
+                android:textSize="80dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -111,8 +115,10 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardodg1"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@id/guideline_buttoniGornji_donji"
         app:layout_constraintEnd_toStartOf="@+id/guideline_buttoniLijevi_desni"
@@ -123,15 +129,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_odgovor1"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@drawable/rounded_button_odgovori_other_sizes"
                 android:fontFamily="@font/balootammudu"
+                android:gravity="center_horizontal"
                 android:text="Jabuka"
                 android:textColor="#FF8D5D"
-                android:textSize="60sp"
+                android:textSize="70sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -143,8 +150,10 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardodg2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@id/guideline_buttoniGornji_donji"
         app:layout_constraintEnd_toStartOf="@+id/guideline_buttoniDesni_desni"
@@ -155,15 +164,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_odgovor2"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:gravity="center_horizontal"
                 android:background="@drawable/rounded_button_odgovori_other_sizes"
                 android:fontFamily="@font/balootammudu"
                 android:text="Trešnja"
                 android:textColor="#FF8D5D"
-                android:textSize="60sp"
+                android:textSize="70sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -175,8 +185,10 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardodg3"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintTop_toTopOf="@id/guideline_buttoniDonji_gornji"
         app:layout_constraintBottom_toTopOf="@id/guideline_buttoniDonji_donji"
@@ -187,15 +199,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_odgovor3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:gravity="center_horizontal"
                 android:background="@drawable/rounded_button_odgovori_other_sizes"
                 android:fontFamily="@font/balootammudu"
                 android:text="Jagoda"
                 android:textColor="#FF8D5D"
-                android:textSize="60sp"
+                android:textSize="70sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -207,8 +220,10 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardodg4"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintTop_toTopOf="@id/guideline_buttoniDonji_gornji"
         app:layout_constraintBottom_toTopOf="@id/guideline_buttoniDonji_donji"
@@ -219,15 +234,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_odgovor4"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:gravity="center_horizontal"
                 android:background="@drawable/rounded_button_odgovori_other_sizes"
                 android:fontFamily="@font/balootammudu"
                 android:text="Kivi"
                 android:textColor="#FF8D5D"
-                android:textSize="60sp"
+                android:textSize="70sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
