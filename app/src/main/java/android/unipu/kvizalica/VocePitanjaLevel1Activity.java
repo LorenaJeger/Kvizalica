@@ -120,10 +120,15 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 brojTocnihOdgovora++;
+                if(index < listapitanja.size() -1) {
                 index++;
                 modelclass = listapitanja.get(index);
                 resetColor();
                 setAllData();
+                EnableButton();
+            } else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
+                LevelZavrsen();
+            }
             }
         });
     }
@@ -140,6 +145,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                     modelclass = listapitanja.get(index);
                     resetColor();
                     setAllData();
+                    EnableButton();
                 } else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
                     LevelZavrsen();
                 }

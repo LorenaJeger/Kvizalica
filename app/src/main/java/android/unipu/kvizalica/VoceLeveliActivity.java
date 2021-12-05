@@ -23,6 +23,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
         listapitanja= new ArrayList<>();
         listapitanja.add(new ModelClass("koje je voce zeleno","kivi", "banana","jabuka","jagoda","kivi","slika"));
         listapitanja.add(new ModelClass("koje je voce žuto","kivi", "banana","jabuka","jagoda","banana","slika"));
+        listapitanja.add(new ModelClass("koje je voce plavo","kivi", "banana","jabuka","borovnica","borovnica","slika"));
         // za gumb Level 1
         buttonLevel1 = findViewById(R.id.voce_level1);
 
