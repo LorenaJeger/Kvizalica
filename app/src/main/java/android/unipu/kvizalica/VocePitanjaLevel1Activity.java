@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -33,13 +34,17 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     int brojTocnihOdgovora = 0;
     int brojNetocnihOdgovora = 0;
 
+    //Play sound prvo objekt, flag
+    private PlayAudio playAudio;
+    int FLAG=0;
+
     Button btn_sljedecePitanje;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voce_pitanja_level1);
-
+        playAudio= new PlayAudio(this);
         Hooks();
         
 
@@ -61,6 +66,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 timerValue = timerValue-1;
                 progressBar.setProgress(timerValue);
+
             }
 
             @Override
@@ -71,9 +77,10 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 Button ok = dialog.findViewById(R.id.button_vrijemeIsteklo);
                 dialog.setCancelable(false); // da ako se klikne van njega da ne nestane
                 dialog.show();
-
+                FLAG=3;
+                playAudio.setAudioforAnswer(FLAG);
                 // klikom na gumb OK vraćamo se na ChooseCategory Activity
-                ok.setOnClickListener(new View.OnClickListener() {
+                   ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(VocePitanjaLevel1Activity.this, ChooseCategoryActivity.class);
@@ -82,6 +89,10 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 });
             }
         }.start();
+    }
+
+    private void setResetTimer() {
+       //treba vratiti progres bar na pocetk
     }
 
     private void setAllData() {
@@ -115,7 +126,8 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
 
     public void TocanOdgovor(CardView cardview) {
         cardview.setBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
-
+        FLAG=1;
+        playAudio.setAudioforAnswer(FLAG);
         btn_sljedecePitanje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,6 +138,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 resetColor();
                 setAllData();
                 EnableButton();
+                    setResetTimer();
             } else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
                 LevelZavrsen();
             }
@@ -135,7 +148,8 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
 
     public void NetocanOdgovor(CardView cardodg1) {
         cardodg1.setBackgroundColor(getResources().getColor(R.color.netocan_odgovor_crvena));
-
+        FLAG=2;
+        playAudio.setAudioforAnswer(FLAG);
         btn_sljedecePitanje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,6 +160,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                     resetColor();
                     setAllData();
                     EnableButton();
+                    setResetTimer();
                 } else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
                     LevelZavrsen();
                 }
