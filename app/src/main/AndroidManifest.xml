@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kvizalica">
         <activity
+            android:name=".LevelZavrsenActivity"
+            android:exported="false" />
+        <activity
             android:name=".VocePitanjaLevel1Activity"
             android:exported="false" />
         <activity
