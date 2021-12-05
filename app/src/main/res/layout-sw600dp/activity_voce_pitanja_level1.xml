@@ -45,7 +45,7 @@
                 android:gravity="center_horizontal"
                 android:text="Pitanje 1/6"
                 android:textColor="@color/ljubicasta"
-                android:textSize="80dp"
+                android:textSize="52dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -105,7 +105,7 @@
                 android:gravity="center_horizontal"
                 android:text="Koje voće se nalazi na slici?"
                 android:textColor="@color/ljubicasta"
-                android:textSize="80dp"
+                android:textSize="52dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +138,7 @@
                 android:gravity="center_horizontal"
                 android:text="Jabuka"
                 android:textColor="#FF8D5D"
-                android:textSize="70sp"
+                android:textSize="50sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -173,7 +173,7 @@
                 android:fontFamily="@font/balootammudu"
                 android:text="Trešnja"
                 android:textColor="#FF8D5D"
-                android:textSize="70sp"
+                android:textSize="50sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -208,7 +208,7 @@
                 android:fontFamily="@font/balootammudu"
                 android:text="Jagoda"
                 android:textColor="#FF8D5D"
-                android:textSize="70sp"
+                android:textSize="50sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -243,7 +243,7 @@
                 android:fontFamily="@font/balootammudu"
                 android:text="Kivi"
                 android:textColor="#FF8D5D"
-                android:textSize="70sp"
+                android:textSize="50sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -254,75 +254,91 @@
 
 
 
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_button_odgovori"
+        android:fontFamily="@font/balootammudu"
+        android:gravity="center_horizontal"
+        android:text="@string/sljedece_pitanje"
+        android:textColor="#FF8D5D"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_buttonNextPitanje_donji"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_buttoniDesni_desni"
+        app:layout_constraintStart_toStartOf="@+id/guideline_buttoniLijevi_lijevi"
+        app:layout_constraintTop_toTopOf="@+id/guideline_buttonNextPitanje_gornji"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_progressbar_gornji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_progressbar_donji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.16" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_tekstPitanje_donji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.28" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_slika_gornji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.31" />
+        app:layout_constraintGuide_percent="0.27" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_slika_donji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.53" />
+        app:layout_constraintGuide_percent="0.47" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_pitanje_donji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.69" />
+        app:layout_constraintGuide_percent="0.62" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_buttoniGornji_gornji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.72" />
+        app:layout_constraintGuide_percent="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_buttoniGornji_donji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.82" />
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_buttoniDonji_gornji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.84" />
+        app:layout_constraintGuide_percent="0.78" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_buttoniDonji_donji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.94" />
+        app:layout_constraintGuide_percent="0.88" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_buttoniLijevi_lijevi"
@@ -351,6 +367,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_buttonNextPitanje_gornji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_buttonNextPitanje_donji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

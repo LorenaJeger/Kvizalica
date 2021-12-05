@@ -55,8 +55,9 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 Dialog dialog = new Dialog(VocePitanjaLevel1Activity.this);
                 dialog.setContentView(R.layout.time_out);
                 //Log.i("2","Trebam se pokazati");
-
+                dialog.setCancelable(false); // da ako se klikne van njega da ne nestane
                 dialog.show();
+
                 //Log.i("Pokazao sam se","Pokazao sam se");
             }
         }.start();
