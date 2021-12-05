@@ -6,12 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -51,14 +55,21 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                //Log.i("1","Zavrsio sam");
                 Dialog dialog = new Dialog(VocePitanjaLevel1Activity.this);
-                dialog.setContentView(R.layout.time_out);
-                //Log.i("2","Trebam se pokazati");
+                dialog.setContentView(R.layout.dialog_vrijeme_isteklo);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                Button ok = dialog.findViewById(R.id.button_vrijemeIsteklo);
                 dialog.setCancelable(false); // da ako se klikne van njega da ne nestane
                 dialog.show();
 
-                //Log.i("Pokazao sam se","Pokazao sam se");
+                // klikom na gumb OK vraćamo se na ChooseCategory Activity
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(VocePitanjaLevel1Activity.this, ChooseCategoryActivity.class);
+                        startActivity(intent);
+                    }
+                });
             }
         }.start();
     }

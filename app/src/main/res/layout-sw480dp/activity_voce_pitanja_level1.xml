@@ -261,6 +261,7 @@
         android:text="@string/sljedece_pitanje"
         android:textColor="#FF8D5D"
         android:textSize="25sp"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/guideline_buttonNextPitanje_donji"
         app:layout_constraintEnd_toStartOf="@+id/guideline_buttoniDesni_desni"
         app:layout_constraintStart_toStartOf="@+id/guideline_buttoniLijevi_lijevi"
