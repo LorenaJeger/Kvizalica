@@ -26,7 +26,7 @@ public class PlayAudio {
             break;
 
         case 3:
-            int gameOverAudio=R.raw.game_over_sound_kvizalica;
+            int gameOverAudio=R.raw.gameover_;
             playMusic(gameOverAudio);
             break;
     }
