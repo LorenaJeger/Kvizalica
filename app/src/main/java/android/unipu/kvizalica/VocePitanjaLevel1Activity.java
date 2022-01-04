@@ -22,7 +22,7 @@ import java.util.List;
 
 public class VocePitanjaLevel1Activity extends AppCompatActivity {
     CountDownTimer countDownTimer;
-    int timerValue = 20;
+    int timerValue = 25;
     ProgressBar progressBar;
     List<ModelClass> PitanjaLista;
     ModelClass modelclass;
@@ -39,6 +39,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     int FLAG=0;
 
     Button btn_sljedecePitanje;
+
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,12 +61,16 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_sljedecePitanje.setClickable(false);
 
         setAllData();
-        
 
-        countDownTimer = new CountDownTimer(20000,1000) {
+        setResetTimer();
+
+    }
+
+    private void setResetTimer() {
+        countDownTimer = new CountDownTimer(25000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                timerValue = timerValue-1;
+                timerValue = timerValue - 1;
                 progressBar.setProgress(timerValue);
 
                 // ako je preostalo zadnjih 10 sekundi promijeni boju progress bara u crvenu
@@ -86,7 +91,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 FLAG=3;
                 playAudio.setAudioforAnswer(FLAG);
                 // klikom na gumb OK vraćamo se na ChooseCategory Activity
-                   ok.setOnClickListener(new View.OnClickListener() {
+                ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(VocePitanjaLevel1Activity.this, ChooseCategoryActivity.class);
@@ -95,11 +100,6 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 });
             }
         }.start();
-    }
-
-    private void setResetTimer() {
-       //treba vratiti progres bar na pocetak
-        countDownTimer.start();
     }
 
     private void setAllData() {
