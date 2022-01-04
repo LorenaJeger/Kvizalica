@@ -22,7 +22,7 @@ import java.util.List;
 
 public class VocePitanjaLevel1Activity extends AppCompatActivity {
     CountDownTimer countDownTimer;
-    int timerValue = 25;
+    int timerValue = 20;
     ProgressBar progressBar;
     List<ModelClass> PitanjaLista;
     ModelClass modelclass;
@@ -67,31 +67,35 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     }
 
     private void setResetTimer() {
-        countDownTimer = new CountDownTimer(25000,1000) {
+
+        countDownTimer = new CountDownTimer(20000,1000) {
+
             @Override
             public void onTick(long millisUntilFinished) {
-                timerValue = timerValue - 1;
+                timerValue = timerValue-1;
                 progressBar.setProgress(timerValue);
 
-                // ako je preostalo zadnjih 10 sekundi promijeni boju progress bara u crvenu
                 if(millisUntilFinished < 10000) {
                     progressBar.getProgressDrawable().setColorFilter(
                             Color.RED, PorterDuff.Mode.SRC_IN);
                 }
+            
+    }
 
-            }
-            @Override
-            public void onFinish() {
-                Dialog dialog = new Dialog(VocePitanjaLevel1Activity.this);
-                dialog.setContentView(R.layout.dialog_vrijeme_isteklo);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                Button ok = dialog.findViewById(R.id.button_vrijemeIsteklo);
-                dialog.setCancelable(false); // da ako se klikne van njega da ne nestane
-                dialog.show();
-                FLAG=3;
-                playAudio.setAudioforAnswer(FLAG);
-                // klikom na gumb OK vraćamo se na ChooseCategory Activity
-                ok.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onFinish() {
+            Dialog dialog = new Dialog(VocePitanjaLevel1Activity.this);
+            dialog.setContentView(R.layout.dialog_vrijeme_isteklo);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            Button ok = dialog.findViewById(R.id.button_vrijemeIsteklo);
+            dialog.setCancelable(false); // da ako se klikne van njega da ne nestane
+            dialog.show();
+            FLAG=3;
+            playAudio.setAudioforAnswer(FLAG);
+            // klikom na gumb OK vraćamo se na ChooseCategory Activity
+
+                   ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(VocePitanjaLevel1Activity.this, ChooseCategoryActivity.class);
@@ -146,6 +150,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 resetColor();
                 setAllData();
                 EnableButton();
+                timerValue=20;
                 setResetTimer();
             } else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
                 LevelZavrsen();
@@ -169,6 +174,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                     resetColor();
                     setAllData();
                     EnableButton();
+                    timerValue=20;
                     setResetTimer();
                 } else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
                     LevelZavrsen();
