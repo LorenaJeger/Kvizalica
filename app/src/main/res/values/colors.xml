@@ -17,4 +17,8 @@
     <color name="zelena">#4BAE4F</color>
     <color name="tocan_odgovor_zelena">#98ee99</color>
     <color name="netocan_odgovor_crvena">#b71c1c</color>
+    <color name="plava_level_zavrsen">#4A66C8</color>
+    <color name="sljedeci_level_button">#F3568F</color>
+    <color name="pocetni_izbornik_button">#EAA012</color>
+    <color name="igraj_ponovno_button">#29A0E2</color>
 </resources>

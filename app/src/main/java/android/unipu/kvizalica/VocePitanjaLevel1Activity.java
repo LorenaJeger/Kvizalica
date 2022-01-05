@@ -67,14 +67,13 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     }
 
     private void setResetTimer() {
-
         countDownTimer = new CountDownTimer(20000,1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {
                 timerValue = timerValue-1;
                 progressBar.setProgress(timerValue);
-
+                // ako je ostalo manje od 10s ProgressBar mijenja boju u crvenu
                 if(millisUntilFinished < 10000) {
                     progressBar.getProgressDrawable().setColorFilter(
                             Color.RED, PorterDuff.Mode.SRC_IN);
