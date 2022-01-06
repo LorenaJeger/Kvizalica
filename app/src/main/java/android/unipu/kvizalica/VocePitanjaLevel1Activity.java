@@ -68,7 +68,6 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
 
     private void setResetTimer() {
         countDownTimer = new CountDownTimer(20000,1000) {
-
             @Override
             public void onTick(long millisUntilFinished) {
                 timerValue = timerValue-1;
@@ -78,29 +77,25 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                     progressBar.getProgressDrawable().setColorFilter(
                             Color.RED, PorterDuff.Mode.SRC_IN);
                 }
-            
-    }
-
-
-        @Override
-        public void onFinish() {
-            Dialog dialog = new Dialog(VocePitanjaLevel1Activity.this);
-            dialog.setContentView(R.layout.dialog_vrijeme_isteklo);
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            Button ok = dialog.findViewById(R.id.button_vrijemeIsteklo);
-            dialog.setCancelable(false); // da ako se klikne van njega da ne nestane
-            dialog.show();
-            FLAG=3;
-            playAudio.setAudioforAnswer(FLAG);
-            // klikom na gumb OK vraćamo se na ChooseCategory Activity
-
+            }
+            @Override
+            public void onFinish() {
+                Dialog dialog = new Dialog(VocePitanjaLevel1Activity.this);
+                dialog.setContentView(R.layout.dialog_vrijeme_isteklo);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                Button ok = dialog.findViewById(R.id.button_vrijemeIsteklo);
+                dialog.setCancelable(false); // da ako se klikne van njega da ne nestane
+                dialog.show();
+                FLAG=3;
+                playAudio.setAudioforAnswer(FLAG);
+                // klikom na gumb OK vraćamo se na ChooseCategory Activity
                    ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(VocePitanjaLevel1Activity.this, ChooseCategoryActivity.class);
-                        startActivity(intent);
-                    }
-                });
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(VocePitanjaLevel1Activity.this, ChooseCategoryActivity.class);
+                            startActivity(intent);
+                        }
+                   });
             }
         }.start();
     }

@@ -3,5 +3,6 @@
     <corners  android:radius="20dp"/>
     <gradient
         android:startColor="@color/sljedeci_level_button"
-        android:angle="340"/>
+        android:angle="360">
+    </gradient>
 </shape>
