@@ -77,6 +77,10 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                     progressBar.getProgressDrawable().setColorFilter(
                             Color.RED, PorterDuff.Mode.SRC_IN);
                 }
+                else{
+                    progressBar.getProgressDrawable().setColorFilter(
+                            Color.GREEN, PorterDuff.Mode.SRC_IN);
+                }
             }
             @Override
             public void onFinish() {
