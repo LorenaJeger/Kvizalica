@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,11 +12,26 @@ import android.widget.TextView;
 public class LevelZavrsenActivity extends AppCompatActivity {
     TextView ukupanBrojPitanja, tocniOdgovori, netocniOdgovori;
     Button sljedeciLevel, pocetniIzbornik, igrajPonovno;
-
+    int brojTocnihOdgovora, brojNetocnihOdgovora, brPitanja;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_zavrsen);
+
+        //dohvacas varijable brtocnih i br netocnih iz voce pitanja level1
+        brojTocnihOdgovora=getIntent().getIntExtra("brojTocnihOdgovora",0);
+        brojNetocnihOdgovora=getIntent().getIntExtra("brojNetocnihOdgovora",0);
+        brPitanja=getIntent().getIntExtra("brpitanja",0);
+        Log.i("ukupan br tocnih", String.valueOf(brojTocnihOdgovora));
+        Log.i("ukupan br netocnih", String.valueOf(brojNetocnihOdgovora));
+
+        tocniOdgovori=findViewById(R.id.text_tocniOdgovori);
+        netocniOdgovori=findViewById(R.id.text_netocniOdgovori);
+        ukupanBrojPitanja=findViewById(R.id.text_ukupanBrojPitanja);
+        //postavljanje u text view dohvacenje varijable
+    tocniOdgovori.setText("Tocni odgovori: " + brojTocnihOdgovora);
+    netocniOdgovori.setText("Netocni odgovori: " + brojNetocnihOdgovora);
+    ukupanBrojPitanja.setText("Ukupan broj pitanja: "+ brPitanja);
 
         // button sljedeci level
         sljedeciLevel = findViewById(R.id.button_sljedeciLevel);

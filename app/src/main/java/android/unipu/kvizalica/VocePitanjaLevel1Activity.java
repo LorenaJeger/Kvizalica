@@ -12,6 +12,7 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -25,6 +26,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     int timerValue = 20;
     ProgressBar progressBar;
     List<ModelClass> PitanjaLista;
+    int brpitanja;
     ModelClass modelclass;
     int index = 0; //služi kao pozicija pitanja
     TextView pitanje,btn_odgovor1,btn_odgovor2, btn_odgovor3,btn_odgovor4;
@@ -63,6 +65,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         setAllData();
 
         setResetTimer();
+        brpitanja= listapitanja.size();
 
     }
 
@@ -166,6 +169,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 brojNetocnihOdgovora++;
+                Log.i("br netocnih u pitanjima", String.valueOf(brojNetocnihOdgovora));
                 if(index < listapitanja.size() -1) {
                     index++;
                     modelclass = listapitanja.get(index);
@@ -183,6 +187,11 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     // metoda koja poziva novu aktivnost
     private void LevelZavrsen() {
         Intent intent = new Intent(VocePitanjaLevel1Activity.this, LevelZavrsenActivity.class);
+        //šalješ 2 varijable pomocu intent put exstra u novu aktivnost level azvrsen
+        intent.putExtra("brojTocnihOdgovora", brojTocnihOdgovora);
+        intent.putExtra("brojNetocnihOdgovora", brojNetocnihOdgovora);
+        intent.putExtra("brpitanja", brpitanja);
+
         startActivity(intent);
     }
     // metoda da se omogući klikanje na ponuđene odgovore
