@@ -7,9 +7,11 @@ public class PlayAudio {
     private Context mContext;
     private MediaPlayer mediaPlayer;
 
-    public PlayAudio(Context mContext) {
+
+    public PlayAudio(Context mContext ) {
         this.mContext = mContext;
     }
+
 
     public void setAudioforAnswer(int flag){
 
@@ -18,16 +20,19 @@ public class PlayAudio {
         case 1:
             int correctAudio=R.raw.yayy_kvizalica_aud;
             playMusic(correctAudio);
+
             break;
 
         case 2:
             int wrongAudio=R.raw.wrong_kvizalica;
             playMusic(wrongAudio);
+
             break;
 
         case 3:
             int gameOverAudio=R.raw.gameover_;
             playMusic(gameOverAudio);
+
             break;
     }
 

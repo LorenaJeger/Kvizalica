@@ -27,9 +27,10 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     ProgressBar progressBar;
     List<ModelClass> PitanjaLista;
     int brpitanja;
+    int index_pitanja=1;
     ModelClass modelclass;
     int index = 0; //služi kao pozicija pitanja
-    TextView pitanje,btn_odgovor1,btn_odgovor2, btn_odgovor3,btn_odgovor4;
+    TextView pitanje,btn_odgovor1,btn_odgovor2, btn_odgovor3,btn_odgovor4, naslov_pitanje;
     CardView cardpitanje,cardodg1,cardodg2, cardodg3,cardodg4;
 
     // varijable za brojanje točno i netočno odgovorenih pitanja
@@ -39,7 +40,6 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     //Play sound prvo objekt, flag
     private PlayAudio playAudio;
     int FLAG=0;
-
     Button btn_sljedecePitanje;
 
     
@@ -54,6 +54,8 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         PitanjaLista = listapitanja;
         Collections.shuffle(PitanjaLista);
         modelclass = listapitanja.get(index);
+
+        brpitanja= listapitanja.size();
 
         cardodg1.setBackgroundColor(getResources().getColor(R.color.bijela));
         cardodg2.setBackgroundColor(getResources().getColor(R.color.bijela));
@@ -114,11 +116,13 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_odgovor3.setText(modelclass.getOdgC());
         btn_odgovor4.setText(modelclass.getOdgD());
 
-
+        naslov_pitanje.setText("Broj pitanja: " + index_pitanja + "/"+ brpitanja);
 
     }
 
     private void Hooks() {
+
+        naslov_pitanje=findViewById(R.id.naslov_pitanje);
         progressBar = findViewById(R.id.progress_bar);
         pitanje = findViewById(R.id.pitanje);
         btn_odgovor1 = findViewById(R.id.btn_odgovor1);
@@ -140,6 +144,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         cardodg1.setBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
         FLAG = 1;
         playAudio.setAudioforAnswer(FLAG);
+
         countDownTimer.cancel(); // kad se kikne na odgovor timer se stopira
         brojTocnihOdgovora++;
         if(index == listapitanja.size() - 1) {
@@ -150,6 +155,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 public void onClick(View v) {
                     //if(index < listapitanja.size() -1) {
                         index++;
+                        index_pitanja++;
                         modelclass = listapitanja.get(index);
                         resetColor();
                         setAllData();
@@ -179,6 +185,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                     //Log.i("br netocnih u pitanjima", String.valueOf(brojNetocnihOdgovora));
                     //if(index < listapitanja.size() -1) {
                         index++;
+                    index_pitanja++;
                         modelclass = listapitanja.get(index);
                         resetColor();
                         setAllData();
