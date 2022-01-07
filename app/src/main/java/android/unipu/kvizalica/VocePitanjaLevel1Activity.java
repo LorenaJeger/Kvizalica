@@ -47,7 +47,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voce_pitanja_level1);
-        playAudio= new PlayAudio(this);
+        playAudio = new PlayAudio(this);
         Hooks();
         
 
@@ -65,7 +65,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         setAllData();
 
         setResetTimer();
-        brpitanja= listapitanja.size();
+        brpitanja = listapitanja.size();
 
     }
 
@@ -73,7 +73,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         countDownTimer = new CountDownTimer(20000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                timerValue = timerValue-1;
+                timerValue = timerValue - 1;
                 progressBar.setProgress(timerValue);
                 // ako je ostalo manje od 10s ProgressBar mijenja boju u crvenu
                 if(millisUntilFinished < 10000) {
@@ -82,7 +82,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 }
                 else{
                     progressBar.getProgressDrawable().setColorFilter(
-                            Color.GREEN, PorterDuff.Mode.SRC_IN);
+                            Color.YELLOW, PorterDuff.Mode.SRC_IN);
                 }
             }
             @Override
@@ -93,7 +93,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 Button ok = dialog.findViewById(R.id.button_vrijemeIsteklo);
                 dialog.setCancelable(false); // da ako se klikne van njega da ne nestane
                 dialog.show();
-                FLAG=3;
+                FLAG = 3;
                 playAudio.setAudioforAnswer(FLAG);
                 // klikom na gumb OK vraćamo se na ChooseCategory Activity
                    ok.setOnClickListener(new View.OnClickListener() {
@@ -136,58 +136,66 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_sljedecePitanje = findViewById(R.id.button_sljedece_pitanje);
     }
 
-    public void TocanOdgovor(CardView cardview) {
-        cardview.setBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
-        FLAG=1;
+    public void TocanOdgovor(CardView cardodg1) {
+        cardodg1.setBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
+        FLAG = 1;
         playAudio.setAudioforAnswer(FLAG);
         countDownTimer.cancel(); // kad se kikne na odgovor timer se stopira
-        btn_sljedecePitanje.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                brojTocnihOdgovora++;
-                if(index < listapitanja.size() -1) {
-                index++;
-                modelclass = listapitanja.get(index);
-                resetColor();
-                setAllData();
-                EnableButton();
-                timerValue=20;
-                setResetTimer();
-            } else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
-                LevelZavrsen();
-            }
-            }
-        });
+        brojTocnihOdgovora++;
+        if(index == listapitanja.size() - 1) {
+            LevelZavrsen();
+        } else {
+            btn_sljedecePitanje.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //if(index < listapitanja.size() -1) {
+                        index++;
+                        modelclass = listapitanja.get(index);
+                        resetColor();
+                        setAllData();
+                        EnableButton();
+                        timerValue = 20;
+                        setResetTimer();
+                    //} else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
+                        //LevelZavrsen();
+                    //}
+                }
+            });
+        }
     }
 
     public void NetocanOdgovor(CardView cardodg1) {
         cardodg1.setBackgroundColor(getResources().getColor(R.color.netocan_odgovor_crvena));
-        FLAG=2;
+        FLAG = 2;
         playAudio.setAudioforAnswer(FLAG);
         countDownTimer.cancel(); // kad se kikne na odgovor timer se stopira
-        btn_sljedecePitanje.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                brojNetocnihOdgovora++;
-                Log.i("br netocnih u pitanjima", String.valueOf(brojNetocnihOdgovora));
-                if(index < listapitanja.size() -1) {
-                    index++;
-                    modelclass = listapitanja.get(index);
-                    resetColor();
-                    setAllData();
-                    EnableButton();
-                    timerValue=20;
-                    setResetTimer();
-                } else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
-                    LevelZavrsen();
+        brojNetocnihOdgovora++;
+        if(index == listapitanja.size() - 1) {
+            LevelZavrsen();
+        } else {
+            btn_sljedecePitanje.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Log.i("br netocnih u pitanjima", String.valueOf(brojNetocnihOdgovora));
+                    //if(index < listapitanja.size() -1) {
+                        index++;
+                        modelclass = listapitanja.get(index);
+                        resetColor();
+                        setAllData();
+                        EnableButton();
+                        timerValue = 20;
+                        setResetTimer();
+                    //} else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
+                        //LevelZavrsen();
+                    //}
                 }
-            }
-        });
+            });
+        }
     }
     // metoda koja poziva novu aktivnost
     private void LevelZavrsen() {
         Intent intent = new Intent(VocePitanjaLevel1Activity.this, LevelZavrsenActivity.class);
-        //šalješ 2 varijable pomocu intent put exstra u novu aktivnost level azvrsen
+        //šaljeu se 2 varijable pomocu intent put extra u novu aktivnost LevelZavrsen
         intent.putExtra("brojTocnihOdgovora", brojTocnihOdgovora);
         intent.putExtra("brojNetocnihOdgovora", brojNetocnihOdgovora);
         intent.putExtra("brpitanja", brpitanja);
@@ -219,15 +227,12 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         DisableButton();
         btn_sljedecePitanje.setClickable(true);
         if(modelclass.getOdgA().equals(modelclass.getTocan())) {
-            cardodg1.setCardBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
-            if(index < listapitanja.size() -1) {
+                cardodg1.setCardBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
                 TocanOdgovor(cardodg1);
             } else {
-                LevelZavrsen();
+                NetocanOdgovor(cardodg1);
             }
-        } else {
-            NetocanOdgovor(cardodg1);
-        }
+
     }
 
     public void Odgovor2Click(View view) {
@@ -235,11 +240,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_sljedecePitanje.setClickable(true);
         if(modelclass.getOdgB().equals(modelclass.getTocan())) {
             cardodg2.setCardBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
-            if(index < listapitanja.size() -1) {
                 TocanOdgovor(cardodg2);
-            } else {
-                LevelZavrsen();
-            }
         } else {
             NetocanOdgovor(cardodg2);
         }
@@ -250,11 +251,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_sljedecePitanje.setClickable(true);
         if(modelclass.getOdgC().equals(modelclass.getTocan())) {
             cardodg3.setCardBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
-            if(index < listapitanja.size() -1) {
                 TocanOdgovor(cardodg3);
-            } else {
-                LevelZavrsen();
-            }
         } else {
             NetocanOdgovor(cardodg3);
         }
@@ -265,11 +262,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_sljedecePitanje.setClickable(true);
         if(modelclass.getOdgD().equals(modelclass.getTocan())) {
             cardodg4.setCardBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
-            if(index < listapitanja.size() -1) {
                 TocanOdgovor(cardodg4);
-            } else {
-                LevelZavrsen();
-            }
         } else {
             NetocanOdgovor(cardodg4);
         }
