@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-
+//main
 public class MainActivity extends AppCompatActivity {
 
     // varijabla za gumb Igraj

@@ -3,7 +3,7 @@ package android.unipu.kvizalica;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
+//rezultati
 public class KvizResults extends AppCompatActivity {
 
     @Override

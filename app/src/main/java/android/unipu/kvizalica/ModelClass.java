@@ -1,5 +1,5 @@
 package android.unipu.kvizalica;
-
+// sad koristimo
 public class ModelClass {
 
     String Question;

@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
-
+//punimo listu pitanja
 public class VoceLeveliActivity extends AppCompatActivity {
     Button buttonLevel1, buttonLevel2, buttonLevel3;
 
-   public static ArrayList<ModelClass> listapitanja;
+   public static ArrayList<ModelClass>  listapitanja;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

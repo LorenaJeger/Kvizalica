@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+//level je zavrsen
 public class LevelZavrsenActivity extends AppCompatActivity {
     TextView ukupanBrojPitanja, tocniOdgovori, netocniOdgovori;
     Button sljedeciLevel, pocetniIzbornik, igrajPonovno;

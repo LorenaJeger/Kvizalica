@@ -142,11 +142,12 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
 
     public void TocanOdgovor(CardView cardodg1) {
         cardodg1.setBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
+
         FLAG = 1;
         playAudio.setAudioforAnswer(FLAG);
-
         countDownTimer.cancel(); // kad se kikne na odgovor timer se stopira
         brojTocnihOdgovora++;
+
         if(index == listapitanja.size() - 1) {
             LevelZavrsen();
         } else {

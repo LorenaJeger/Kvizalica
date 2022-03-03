@@ -2,7 +2,7 @@ package android.unipu.kvizalica;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-
+//skripta za audio, playa audio kad su zasatvice odredeni br
 public class PlayAudio {
     private Context mContext;
     private MediaPlayer mediaPlayer;
