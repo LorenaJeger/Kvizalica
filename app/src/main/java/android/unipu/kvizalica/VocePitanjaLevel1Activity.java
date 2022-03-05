@@ -27,7 +27,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     ProgressBar progressBar;
     List<ModelClass> PitanjaLista;
     int brpitanja;
-    int index_pitanja=1;
+    int index_pitanja = 1;
     ModelClass modelclass;
     int index = 0; //služi kao pozicija pitanja
     TextView pitanje,btn_odgovor1,btn_odgovor2, btn_odgovor3,btn_odgovor4, naslov_pitanje;
@@ -47,6 +47,13 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voce_pitanja_level1);
+
+        // za povući vrstu kategorije iz aktivnosti ChooseCategoryActivity
+        final String getTopicNameFirebase = getIntent().getStringExtra("selectedTopicName");
+        final String getselectedLevel = getIntent().getStringExtra("selectedLevel");
+        Log.i("topic: ", getTopicNameFirebase);
+        Log.i("level: ", getselectedLevel);
+
         playAudio = new PlayAudio(this);
         Hooks();
         
@@ -55,7 +62,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         Collections.shuffle(PitanjaLista);
         modelclass = listapitanja.get(index);
 
-        brpitanja= listapitanja.size();
+        brpitanja = listapitanja.size();
 
         cardodg1.setBackgroundColor(getResources().getColor(R.color.bijela));
         cardodg2.setBackgroundColor(getResources().getColor(R.color.bijela));
@@ -67,7 +74,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         setAllData();
 
         setResetTimer();
-        brpitanja = listapitanja.size();
+        //brpitanja = listapitanja.size();
 
     }
 
@@ -110,6 +117,11 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     }
 
     private void setAllData() {
+        /*pitanje.setText(listapitanja.get(index).getQuestion());
+        btn_odgovor1.setText(listapitanja.get(index).getOdgA());
+        btn_odgovor2.setText(listapitanja.get(index).getOdgB());
+        btn_odgovor3.setText(listapitanja.get(index).getOdgC());
+        btn_odgovor4.setText(listapitanja.get(index).getOdgD());*/
         pitanje.setText(modelclass.getQuestion());
         btn_odgovor1.setText(modelclass.getOdgA());
         btn_odgovor2.setText(modelclass.getOdgB());
