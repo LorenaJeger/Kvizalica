@@ -7,7 +7,7 @@
     <string name="naslov_zivotinje">Životinje</string>
     <string name="naslov_voce">Voće</string>
     <string name="naslov_povrce">Povrće</string>
-    <string name="kategorija_voce">Kategorija:\nVoće</string>
+    <string name="kategorija_voce">Kategorija:</string>
     <string name="naslov_dialogVrijeme">Vrijeme je\nisteklo!</string>
     <string name="button_ok">OK</string>
     <string name="sljedece_pitanje">Sljedeće pitanje</string>

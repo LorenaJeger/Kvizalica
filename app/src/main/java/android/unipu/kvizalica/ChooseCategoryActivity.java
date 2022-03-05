@@ -10,24 +10,61 @@ import android.widget.ImageButton;
 //Izbor kategorije
 public class ChooseCategoryActivity extends AppCompatActivity {
 
-    ImageButton Voce;
+    ImageButton Brojevi, Zivotinje, Voce, Povrce;
+
+    // string pomoću kojeg ćemo povlačiti vrstu kategorije koja je odabrana
+    private String selectedTopicName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_category);
 
+        // za ImageButton Brojevi
+        Brojevi = findViewById(R.id.slika_kategorije_brojevi);
 
-        // za gumb Voce
+        //dodavanje listenera za ImageButton Brojevi
+        Brojevi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedTopicName = "Brojevi";
+
+            }
+        });
+
+        // za ImageButton Zivotinje
+        Zivotinje = findViewById(R.id.slika_kategorije_zivotinje);
+
+        Zivotinje.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedTopicName = "Zivotinje";
+            }
+        });
+
+        // za ImageButton Voce
         Voce = findViewById(R.id.slika_kategorije_voce);
 
-        // dodavanje listenera za gumb Igraj
+        // dodavanje listenera za ImageButton Voce
         Voce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // pozivanje aktivnosti ChooseCategory
+                selectedTopicName = "Voće";
+                // pozivanje aktivnosti VoceLeveliActivity
                 Intent intent = new Intent(ChooseCategoryActivity.this, VoceLeveliActivity.class);
+                intent.putExtra("selectedTopic", selectedTopicName);
                 startActivity(intent);
+            }
+        });
+
+        // za ImageButton Povrce
+        Povrce = findViewById(R.id.slika_kategorije_povrce);
+
+        // dodavanje listenera za ImageButton Povrce
+        Povrce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedTopicName = "Povrce";
             }
         });
     }

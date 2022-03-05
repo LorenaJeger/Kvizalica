@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 //punimo listu pitanja
 public class VoceLeveliActivity extends AppCompatActivity {
     Button buttonLevel1, buttonLevel2, buttonLevel3;
+    TextView odabranaKategorija;
 
    public static ArrayList<ModelClass>  listapitanja;
 
@@ -19,11 +21,19 @@ public class VoceLeveliActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voce_leveli);
 
+        // za povući vrstu kategorije iz aktivnosti ChooseCategoryActivity
+        final String getSelectedTopicName = getIntent().getStringExtra("selectedTopic");
+
 
         listapitanja= new ArrayList<>();
         listapitanja.add(new ModelClass("koje je voce zeleno","kivi", "banana","jabuka","jagoda","kivi","slika"));
         listapitanja.add(new ModelClass("koje je voce žuto","kivi", "banana","jabuka","jagoda","banana","slika"));
         listapitanja.add(new ModelClass("koje je voce plavo","kivi", "banana","jabuka","borovnica","borovnica","slika"));
+
+        // za TextView Kategorija
+        odabranaKategorija = findViewById(R.id.odabranaKategorija);
+        odabranaKategorija.setText(getSelectedTopicName);
+
         // za gumb Level 1
         buttonLevel1 = findViewById(R.id.voce_level1);
 

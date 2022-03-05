@@ -10,7 +10,7 @@
     tools:context=".VoceLeveliActivity">
 
     <TextView
-        android:id="@+id/tekst_kategorijaVoce"
+        android:id="@+id/tekst_kategorija"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fontFamily="@font/cherrybombregular"
@@ -18,7 +18,7 @@
         android:text="@string/kategorija_voce"
         android:textColor="@color/ljubicasta"
         android:textSize="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_kategorijaVoce_donji"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_kategorija_donji"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline_kategorijaVoce_gornji" />
@@ -80,7 +80,7 @@
         app:layout_constraintGuide_percent="0.16" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_kategorijaVoce_donji"
+        android:id="@+id/guideline_kategorija_donji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
