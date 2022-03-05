@@ -74,39 +74,40 @@ public class VoceLeveliActivity extends AppCompatActivity {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://kvizalicajegervosten-default-rtdb.europe-west1.firebasedatabase.app/");
 
         // Prikaz dialoga dok se dohvaćaju pitanja iz baze
-        Log.i("prikaz dijaloga", "dijalog");
+      /*  Log.i("prikaz dijaloga", "dijalog");
         ProgressDialog progresDijalog = new ProgressDialog(VoceLeveliActivity.this);
         progresDijalog.setCancelable(false);
         progresDijalog.setMessage("Učitavanje...");
         progresDijalog.show();
-
+*/
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // dohvaćanje svih pitanja iz Firebase-a za određenu kategoriju i određeni level
                 for(DataSnapshot dataSnapshot : snapshot.child(getSelectedTopicName).getChildren()) {
                     Log.i("prvi for", "ušao");
-                    for(DataSnapshot dt : snapshot.child(selectedLevel).getChildren()) {
+                    //for(DataSnapshot dt : snapshot.child(selectedLevel).getChildren()) {
                         Log.i("drugi for", "ušao");
-                        final String getQuestion = dt.child("Pitanje").getValue(String.class);
-                        //Log.i("dohvat pitanja", getQuestion);
-                        final String getSlika = dt.child("Slika").getValue(String.class);
-                        final String getOdgA = dt.child("Odgovor1").getValue(String.class);
-                        final String getOdgB = dt.child("Odgovor2").getValue(String.class);
-                        final String getOdgC = dt.child("Odgovor3").getValue(String.class);
-                        final String getOdgD = dt.child("Odgovor4").getValue(String.class);
-                        final String getTocan = dt.child("TočanOdgovor").getValue(String.class);
+                        final String getQuestion = dataSnapshot.child("Pitanje").getValue(String.class);
+                        //Log.i("dohvat pitanja", getQuestion)
+                        final String getOdgA = dataSnapshot.child("Odgovor1").getValue(String.class);
+                        final String getOdgB = dataSnapshot.child("Odgovor2").getValue(String.class);
+                        final String getOdgC = dataSnapshot.child("Odgovor3").getValue(String.class);
+                        final String getOdgD = dataSnapshot.child("Odgovor4").getValue(String.class);
+                        final String getTocan = dataSnapshot.child("TočanOdgovor").getValue(String.class);
+                    final String getSlika = dataSnapshot.child("Slika").getValue(String.class);
 
                         // dodavanje podataka u listu listapitanja
-                        ModelClass listaPodataka = new ModelClass(getQuestion, getSlika, getOdgA, getOdgB, getOdgC, getOdgD, getTocan);
+                        ModelClass listaPodataka = new ModelClass(getQuestion, getOdgA, getOdgB, getOdgC, getOdgD, getTocan,getSlika);
                         listapitanja.add(listaPodataka);
                         Log.i("listapitanja", "napunio listu");
                         Log.i("prikaz liste", listapitanja.toString());
                     }
                 }
                 // sakrij dijalog
-                progresDijalog.hide();
-            }
+
+                //progresDijalog.hide();
+            //}
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
