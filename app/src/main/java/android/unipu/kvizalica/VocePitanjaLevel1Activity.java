@@ -16,8 +16,11 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.Collections;
 import java.util.List;
@@ -33,6 +36,10 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     int index = 0; //služi kao pozicija pitanja
     TextView pitanje,btn_odgovor1,btn_odgovor2, btn_odgovor3,btn_odgovor4, naslov_pitanje;
     CardView cardpitanje,cardodg1,cardodg2, cardodg3,cardodg4;
+
+    String slika;
+
+    ImageView slika_view;
 
     // varijable za brojanje točno i netočno odgovorenih pitanja
     int brojTocnihOdgovora = 0;
@@ -117,17 +124,25 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         /*pitanje.setText(listapitanja.get(index).getQuestion());
         btn_odgovor1.setText(listapitanja.get(index).getOdgA());
         btn_odgovor2.setText(listapitanja.get(index).getOdgB());
-        btn_odgovor3.setText(listapitanja.get(index).getOdgC());
+        btn_odgovor3.setText(listapitanja.get(index).getOdgC());sx
         btn_odgovor4.setText(listapitanja.get(index).getOdgD());*/
         pitanje.setText(modelclass.getQuestion());
         btn_odgovor1.setText(modelclass.getOdgA());
         btn_odgovor2.setText(modelclass.getOdgB());
         btn_odgovor3.setText(modelclass.getOdgC());
         btn_odgovor4.setText(modelclass.getOdgD());
-
+        slika= modelclass.getSlika();
+        //sluzi za prikaz slike iz baze pomocu url
+        Glide.with(this).load(slika).into(slika_view);
+        
         naslov_pitanje.setText("Broj pitanja: " + index_pitanja + "/"+ brpitanja);
 
+
+
+
     }
+
+
 
     private void Hooks() {
 
@@ -138,7 +153,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_odgovor2 = findViewById(R.id.btn_odgovor2);
         btn_odgovor3 = findViewById(R.id.btn_odgovor3);
         btn_odgovor4 = findViewById(R.id.btn_odgovor4);
-
+        slika_view=findViewById(R.id.imageView);
 
         cardpitanje = findViewById(R.id.cardpitanje);
         cardodg1 = findViewById(R.id.cardodg1);
