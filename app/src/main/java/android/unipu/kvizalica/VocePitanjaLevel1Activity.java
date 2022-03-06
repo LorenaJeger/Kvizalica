@@ -1,6 +1,7 @@
 package android.unipu.kvizalica;
 
-import static android.unipu.kvizalica.VoceLeveliActivity.listapitanja;
+
+import static android.unipu.kvizalica.PovezivanjeFirebase.listapitanja;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -48,11 +49,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voce_pitanja_level1);
 
-        // za povući vrstu kategorije iz aktivnosti ChooseCategoryActivity
-        final String getTopicNameFirebase = getIntent().getStringExtra("selectedTopicName");
-        final String getselectedLevel = getIntent().getStringExtra("selectedLevel");
-        Log.i("topic: ", getTopicNameFirebase);
-        Log.i("level: ", getselectedLevel);
+
 
         playAudio = new PlayAudio(this);
         Hooks();

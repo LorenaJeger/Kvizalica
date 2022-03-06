@@ -27,7 +27,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
     // string pomoću kojeg ćemo povlačiti level koji je odabran
     private String selectedLevel = "";
 
-    public static ArrayList<ModelClass>  listapitanja;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
         final String getSelectedTopicName = getIntent().getStringExtra("selectedTopic");
 
 
-        listapitanja = new ArrayList<>();
+
         /*listapitanja.add(new ModelClass("koje je voce zeleno","kivi", "banana","jabuka","jagoda","kivi","slika"));
         listapitanja.add(new ModelClass("koje je voce žuto","kivi", "banana","jabuka","jagoda","banana","slika"));
         listapitanja.add(new ModelClass("koje je voce plavo","kivi", "banana","jabuka","borovnica","borovnica","slika"));*/
@@ -63,57 +63,14 @@ public class VoceLeveliActivity extends AppCompatActivity {
             public void onClick(View v) {
                 selectedLevel = "level1";
                 // pozivanje aktivnosti VocePitanjaLevel1Activity
-                Intent intent = new Intent(VoceLeveliActivity.this, VocePitanjaLevel1Activity.class);
+                Intent intent = new Intent(VoceLeveliActivity.this, PovezivanjeFirebase.class);
                 intent.putExtra("selectedTopicName", getSelectedTopicName);
                 intent.putExtra("selectedLevel", selectedLevel);
                 startActivity(intent);
             }
         });
 
-        // Dohvaćanje pitanja s Firebase-a
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://kvizalicajegervosten-default-rtdb.europe-west1.firebasedatabase.app/");
 
-        // Prikaz dialoga dok se dohvaćaju pitanja iz baze
-      /*  Log.i("prikaz dijaloga", "dijalog");
-        ProgressDialog progresDijalog = new ProgressDialog(VoceLeveliActivity.this);
-        progresDijalog.setCancelable(false);
-        progresDijalog.setMessage("Učitavanje...");
-        progresDijalog.show();
-*/
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // dohvaćanje svih pitanja iz Firebase-a za određenu kategoriju i određeni level
-                for(DataSnapshot dataSnapshot : snapshot.child(getSelectedTopicName).getChildren()) {
-                    Log.i("prvi for", "ušao");
-                    //for(DataSnapshot dt : snapshot.child(selectedLevel).getChildren()) {
-                        Log.i("drugi for", "ušao");
-                        final String getQuestion = dataSnapshot.child("Pitanje").getValue(String.class);
-                        //Log.i("dohvat pitanja", getQuestion)
-                        final String getOdgA = dataSnapshot.child("Odgovor1").getValue(String.class);
-                        final String getOdgB = dataSnapshot.child("Odgovor2").getValue(String.class);
-                        final String getOdgC = dataSnapshot.child("Odgovor3").getValue(String.class);
-                        final String getOdgD = dataSnapshot.child("Odgovor4").getValue(String.class);
-                        final String getTocan = dataSnapshot.child("TočanOdgovor").getValue(String.class);
-                    final String getSlika = dataSnapshot.child("Slika").getValue(String.class);
-
-                        // dodavanje podataka u listu listapitanja
-                        ModelClass listaPodataka = new ModelClass(getQuestion, getOdgA, getOdgB, getOdgC, getOdgD, getTocan,getSlika);
-                        listapitanja.add(listaPodataka);
-                        Log.i("listapitanja", "napunio listu");
-                        Log.i("prikaz liste", listapitanja.toString());
-                    }
-                }
-                // sakrij dijalog
-
-                //progresDijalog.hide();
-            //}
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
 
