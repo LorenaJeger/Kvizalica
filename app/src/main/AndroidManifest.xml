@@ -12,17 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kvizalica">
         <activity
+            android:name=".PovezivanjeFirebase"
+            android:exported="false" />
+        <activity
             android:name=".LevelZavrsenActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VocePitanjaLevel1Activity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VoceLeveliActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".KvizResults"
             android:exported="false" />
