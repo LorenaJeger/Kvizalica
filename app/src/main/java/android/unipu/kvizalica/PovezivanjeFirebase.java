@@ -51,9 +51,8 @@ public class PovezivanjeFirebase extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot : snapshot.child(getTopicNameFirebase).getChildren()) {
                     Log.i("prvi for", "ušao");
                     //for(DataSnapshot dt : snapshot.child(selectedLevel).getChildren()) {
-                    Log.i("drugi for", "ušao");
+                    //Log.i("drugi for", "ušao");
                     final String getQuestion = dataSnapshot.child("Pitanje").getValue(String.class);
-                    //Log.i("dohvat pitanja", getQuestion)
                     final String getOdgA = dataSnapshot.child("Odgovor1").getValue(String.class);
                     final String getOdgB = dataSnapshot.child("Odgovor2").getValue(String.class);
                     final String getOdgC = dataSnapshot.child("Odgovor3").getValue(String.class);
