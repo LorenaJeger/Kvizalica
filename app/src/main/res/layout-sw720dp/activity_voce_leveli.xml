@@ -23,6 +23,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline_kategorijaVoce_gornji" />
 
+    <TextView
+        android:id="@+id/odabranaKategorija"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=""
+        android:fontFamily="@font/cherrybombregular"
+        android:gravity="center_horizontal"
+        android:textColor="@color/ljubicasta"
+        android:textSize="55dp"
+        app:layout_constraintBottom_toTopOf="@+id/odabranaKategorija_donji"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_kategorija_donji" />
+
 
     <Button
         android:id="@+id/voce_level1"
@@ -32,7 +46,7 @@
         android:fontFamily="@font/coiny"
         android:text="Level 1"
         android:textColor="#FAFAFA"
-        android:textSize="50sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_level1_donji"
         app:layout_constraintEnd_toStartOf="@+id/guidelineOkomito_desni"
         app:layout_constraintHorizontal_bias="0.0"
@@ -48,7 +62,7 @@
         android:fontFamily="@font/coiny"
         android:text="Level 2"
         android:textColor="#FAFAFA"
-        android:textSize="50sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_level2_donji"
         app:layout_constraintEnd_toStartOf="@+id/guidelineOkomito_desni"
         app:layout_constraintHorizontal_bias="0.0"
@@ -64,7 +78,7 @@
         android:fontFamily="@font/coiny"
         android:text="Level 3"
         android:textColor="#FAFAFA"
-        android:textSize="40sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_level3_donji"
         app:layout_constraintEnd_toStartOf="@+id/guidelineOkomito_desni"
         app:layout_constraintHorizontal_bias="0.0"
@@ -84,7 +98,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.29" />
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/odabranaKategorija_donji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_level1_gornji"

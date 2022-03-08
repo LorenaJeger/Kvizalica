@@ -28,7 +28,10 @@ public class ChooseCategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 selectedTopicName = "Brojevi";
-
+                // pozivanje aktivnosti VoceLeveliActivity
+                Intent intent = new Intent(ChooseCategoryActivity.this, VoceLeveliActivity.class);
+                intent.putExtra("selectedTopic", selectedTopicName);
+                startActivity(intent);
             }
         });
 
@@ -38,7 +41,11 @@ public class ChooseCategoryActivity extends AppCompatActivity {
         Zivotinje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedTopicName = "Zivotinje";
+                selectedTopicName = "Životinje";
+                // pozivanje aktivnosti VoceLeveliActivity
+                Intent intent = new Intent(ChooseCategoryActivity.this, VoceLeveliActivity.class);
+                intent.putExtra("selectedTopic", selectedTopicName);
+                startActivity(intent);
             }
         });
 
@@ -64,7 +71,11 @@ public class ChooseCategoryActivity extends AppCompatActivity {
         Povrce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedTopicName = "Povrce";
+                selectedTopicName = "Povrće";
+                // pozivanje aktivnosti VoceLeveliActivity
+                Intent intent = new Intent(ChooseCategoryActivity.this, VoceLeveliActivity.class);
+                intent.putExtra("selectedTopic", selectedTopicName);
+                startActivity(intent);
             }
         });
 

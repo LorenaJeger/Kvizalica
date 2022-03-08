@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,6 +21,8 @@ import java.util.ArrayList;
 
 public class PovezivanjeFirebase extends AppCompatActivity {
     Button zapocni;
+    //TextView kategorija;
+    TextView level;
 
     public static ArrayList<ModelClass> listapitanja;
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,7 @@ public class PovezivanjeFirebase extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // dohvaćanje svih pitanja iz Firebase-a za određenu kategoriju i određeni level
-                for(DataSnapshot dataSnapshot : snapshot.child(getTopicNameFirebase).getChildren()) {
+                for(DataSnapshot dataSnapshot : snapshot.child(getselectedLevel).getChildren()) {
                     Log.i("prvi for", "ušao");
                     //for(DataSnapshot dt : snapshot.child(selectedLevel).getChildren()) {
                     //Log.i("drugi for", "ušao");
@@ -64,7 +67,7 @@ public class PovezivanjeFirebase extends AppCompatActivity {
                     ModelClass listaPodataka = new ModelClass(getQuestion, getOdgA, getOdgB, getOdgC, getOdgD, getTocan,getSlika);
                     listapitanja.add(listaPodataka);
                     Log.i("listapitanja", "napunio listu");
-                    Log.i("prikaz liste", listapitanja.toString());
+                    //Log.i("prikaz liste", listapitanja.toString());
                 }
             }
             // sakrij dijalog
@@ -78,8 +81,14 @@ public class PovezivanjeFirebase extends AppCompatActivity {
             }
         });
 
+        // TextView
+        //kategorija = findViewById(R.id.text_Odabranakategorija);
+        //kategorija.setText(getTopicNameFirebase);
+        level = findViewById(R.id.text_Odabranilevel);
+        level.setText(getselectedLevel);
+
         // za gumb Igraj
-        zapocni = findViewById(R.id.zapocni);
+        zapocni = findViewById(R.id.kreni);
 
         // dodavanje listenera za gumb Igraj
         zapocni.setOnClickListener(new View.OnClickListener() {

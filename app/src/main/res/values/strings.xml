@@ -18,5 +18,7 @@
     <string name="button_sljedeci_level">Sljedeći level</string>
     <string name="button_pocetni_izbornik">Početni izbornik</string>
     <string name="button_igraj_ponovno">Igraj ponovno</string>
+    <string name="odabrana_kategorija">Odabrana kategorija i level:</string>
+    <string name="kreni">Kreni</string>
 
 </resources>

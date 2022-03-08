@@ -36,7 +36,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
 
         // za povući vrstu kategorije iz aktivnosti ChooseCategoryActivity
         final String getSelectedTopicName = getIntent().getStringExtra("selectedTopic");
-
+        Log.i("VoceLeveliActivity", getSelectedTopicName);
 
 
         /*listapitanja.add(new ModelClass("koje je voce zeleno","kivi", "banana","jabuka","jagoda","kivi","slika"));
@@ -61,7 +61,20 @@ public class VoceLeveliActivity extends AppCompatActivity {
         buttonLevel1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedLevel = "level1";
+                Log.i("button Level1", "kliknuo");
+                if(getSelectedTopicName.equals("Brojevi")) {
+                    selectedLevel = "Brojevi-level1";
+                }
+                if(getSelectedTopicName.equals("Životinje")) {
+                    selectedLevel = "Životinje-level1";
+                }
+                if(getSelectedTopicName.equals("Voće")) {
+                    selectedLevel = "Voće-level1";
+                }
+                if(getSelectedTopicName.equals("Povrće")) {
+                    selectedLevel = "Povrće-level1";
+                }
+                Log.i("selectedLevel button je", selectedLevel);
                 // pozivanje aktivnosti VocePitanjaLevel1Activity
                 Intent intent = new Intent(VoceLeveliActivity.this, PovezivanjeFirebase.class);
                 intent.putExtra("selectedTopicName", getSelectedTopicName);
