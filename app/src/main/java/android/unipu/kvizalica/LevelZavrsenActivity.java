@@ -7,9 +7,26 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 //level je zavrsen
 public class LevelZavrsenActivity extends AppCompatActivity {
+
+
+
+    private static final String FILE_NAME= "leveli.txt";
+    EditText mEditText;
+
     TextView ukupanBrojPitanja, tocniOdgovori, netocniOdgovori;
     Button sljedeciLevel, pocetniIzbornik, igrajPonovno;
     int brojTocnihOdgovora, brojNetocnihOdgovora, brPitanja;
@@ -32,7 +49,11 @@ public class LevelZavrsenActivity extends AppCompatActivity {
     tocniOdgovori.setText("Tocni odgovori: " + brojTocnihOdgovora);
     netocniOdgovori.setText("Netocni odgovori: " + brojNetocnihOdgovora);
     ukupanBrojPitanja.setText("Ukupan broj pitanja: "+ brPitanja);
+if(brojTocnihOdgovora >= brPitanja/2){
+    save();
+    load();
 
+    }
         // button sljedeci level
         sljedeciLevel = findViewById(R.id.button_sljedeciLevel);
 
@@ -61,5 +82,58 @@ public class LevelZavrsenActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void save() {
+        String text="otkljucano";
+        FileOutputStream fos=null;
+        try {
+            fos= openFileOutput(FILE_NAME, MODE_PRIVATE);
+              fos.write(text.getBytes());
+
+//            mEditText.getText().clear();
+            Toast.makeText(this, "Saved to"+ getFilesDir() + "/"+ FILE_NAME, Toast.LENGTH_LONG).show();
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if(fos!=null){
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void load(){
+        FileInputStream fis=null;
+        try{
+            fis=openFileInput(FILE_NAME);
+            InputStreamReader isr= new InputStreamReader(fis);
+            BufferedReader br= new BufferedReader(isr);
+            StringBuilder sb= new StringBuilder();
+            String text;
+            while((text=br.readLine()) !=null ){
+                sb.append(text);
+            }
+            Log.i("citam", String.valueOf(sb));
+        } catch(FileNotFoundException e){
+            e.printStackTrace();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(fis !=null){
+                try {
+                    fis.close();
+                }
+                catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
