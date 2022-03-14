@@ -35,6 +35,9 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_zavrsen);
 
+    final String getTopic = getIntent().getStringExtra("getSelectedTopicName");
+    Log.i("LevelZavrsenActivitykat", getTopic);
+
         //dohvacas varijable brtocnih i br netocnih iz voce pitanja level1
         brojTocnihOdgovora=getIntent().getIntExtra("brojTocnihOdgovora",0);
         brojNetocnihOdgovora=getIntent().getIntExtra("brojNetocnihOdgovora",0);
@@ -46,14 +49,13 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         netocniOdgovori=findViewById(R.id.text_netocniOdgovori);
         ukupanBrojPitanja=findViewById(R.id.text_ukupanBrojPitanja);
         //postavljanje u text view dohvacenje varijable
-    tocniOdgovori.setText("Tocni odgovori: " + brojTocnihOdgovora);
-    netocniOdgovori.setText("Netocni odgovori: " + brojNetocnihOdgovora);
-    ukupanBrojPitanja.setText("Ukupan broj pitanja: "+ brPitanja);
-if(brojTocnihOdgovora >= brPitanja/2){
-    save();
-    load();
-
-    }
+        tocniOdgovori.setText("Tocni odgovori: " + brojTocnihOdgovora);
+        netocniOdgovori.setText("Netocni odgovori: " + brojNetocnihOdgovora);
+        ukupanBrojPitanja.setText("Ukupan broj pitanja: "+ brPitanja);
+        if(brojTocnihOdgovora >= brPitanja/2){
+            save();
+            load();
+        }
         // button sljedeci level
         sljedeciLevel = findViewById(R.id.button_sljedeciLevel);
 
@@ -89,7 +91,7 @@ if(brojTocnihOdgovora >= brPitanja/2){
         FileOutputStream fos=null;
         try {
             fos= openFileOutput(FILE_NAME, MODE_PRIVATE);
-              fos.write(text.getBytes());
+            fos.write(text.getBytes());
 
 //            mEditText.getText().clear();
             Toast.makeText(this, "Saved to"+ getFilesDir() + "/"+ FILE_NAME, Toast.LENGTH_LONG).show();

@@ -25,7 +25,7 @@ import com.bumptech.glide.Glide;
 import java.util.Collections;
 import java.util.List;
 
-public class VocePitanjaLevel1Activity extends AppCompatActivity {
+public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatActivity {
     CountDownTimer countDownTimer;
     int timerValue = 20;
     ProgressBar progressBar;
@@ -41,6 +41,8 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
 
     ImageView slika_view;
 
+
+
     // varijable za brojanje točno i netočno odgovorenih pitanja
     int brojTocnihOdgovora = 0;
     int brojNetocnihOdgovora = 0;
@@ -49,18 +51,20 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     private PlayAudio playAudio;
     int FLAG=0;
     Button btn_sljedecePitanje;
+    private Object getSelected_TopicName;
 
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voce_pitanja_level1);
 
-
+         getSelected_TopicName = getIntent().getStringExtra("getselectedLevel");
+        Log.i("selectedTopicNamelev1", String.valueOf(getSelected_TopicName));
 
         playAudio = new PlayAudio(this);
         Hooks();
-        
+
 
         PitanjaLista = listapitanja;
         Collections.shuffle(PitanjaLista);
@@ -109,13 +113,13 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 FLAG = 3;
                 playAudio.setAudioforAnswer(FLAG);
                 // klikom na gumb OK vraćamo se na ChooseCategory Activity
-                   ok.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent(VocePitanjaLevel1Activity.this, ChooseCategoryActivity.class);
-                            startActivity(intent);
-                        }
-                   });
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(VocePitanjaLevel1Activity.this, ChooseCategoryActivity.class);
+                        startActivity(intent);
+                    }
+                });
             }
         }.start();
     }
@@ -134,7 +138,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         slika= modelclass.getSlika();
         //sluzi za prikaz slike iz baze pomocu url
         Glide.with(this).load(slika).into(slika_view);
-        
+
         naslov_pitanje.setText("Broj pitanja: " + index_pitanja + "/"+ brpitanja);
 
 
@@ -179,16 +183,16 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     //if(index < listapitanja.size() -1) {
-                        index++;
-                        index_pitanja++;
-                        modelclass = listapitanja.get(index);
-                        resetColor();
-                        setAllData();
-                        EnableButton();
-                        timerValue = 20;
-                        setResetTimer();
+                    index++;
+                    index_pitanja++;
+                    modelclass = listapitanja.get(index);
+                    resetColor();
+                    setAllData();
+                    EnableButton();
+                    timerValue = 20;
+                    setResetTimer();
                     //} else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
-                        //LevelZavrsen();
+                    //LevelZavrsen();
                     //}
                 }
             });
@@ -209,16 +213,16 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 public void onClick(View v) {
                     //Log.i("br netocnih u pitanjima", String.valueOf(brojNetocnihOdgovora));
                     //if(index < listapitanja.size() -1) {
-                        index++;
+                    index++;
                     index_pitanja++;
-                        modelclass = listapitanja.get(index);
-                        resetColor();
-                        setAllData();
-                        EnableButton();
-                        timerValue = 20;
-                        setResetTimer();
+                    modelclass = listapitanja.get(index);
+                    resetColor();
+                    setAllData();
+                    EnableButton();
+                    timerValue = 20;
+                    setResetTimer();
                     //} else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
-                        //LevelZavrsen();
+                    //LevelZavrsen();
                     //}
                 }
             });
@@ -231,7 +235,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         intent.putExtra("brojTocnihOdgovora", brojTocnihOdgovora);
         intent.putExtra("brojNetocnihOdgovora", brojNetocnihOdgovora);
         intent.putExtra("brpitanja", brpitanja);
-
+        intent.putExtra("getSelectedTopicName", String.valueOf(getSelected_TopicName));
         startActivity(intent);
     }
     // metoda da se omogući klikanje na ponuđene odgovore
@@ -259,11 +263,11 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         DisableButton();
         btn_sljedecePitanje.setClickable(true);
         if(modelclass.getOdgA().equals(modelclass.getTocan())) {
-                cardodg1.setCardBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
-                TocanOdgovor(cardodg1);
-            } else {
-                NetocanOdgovor(cardodg1);
-            }
+            cardodg1.setCardBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
+            TocanOdgovor(cardodg1);
+        } else {
+            NetocanOdgovor(cardodg1);
+        }
 
     }
 
@@ -272,7 +276,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_sljedecePitanje.setClickable(true);
         if(modelclass.getOdgB().equals(modelclass.getTocan())) {
             cardodg2.setCardBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
-                TocanOdgovor(cardodg2);
+            TocanOdgovor(cardodg2);
         } else {
             NetocanOdgovor(cardodg2);
         }
@@ -283,7 +287,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_sljedecePitanje.setClickable(true);
         if(modelclass.getOdgC().equals(modelclass.getTocan())) {
             cardodg3.setCardBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
-                TocanOdgovor(cardodg3);
+            TocanOdgovor(cardodg3);
         } else {
             NetocanOdgovor(cardodg3);
         }
@@ -294,7 +298,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_sljedecePitanje.setClickable(true);
         if(modelclass.getOdgD().equals(modelclass.getTocan())) {
             cardodg4.setCardBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
-                TocanOdgovor(cardodg4);
+            TocanOdgovor(cardodg4);
         } else {
             NetocanOdgovor(cardodg4);
         }

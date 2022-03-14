@@ -96,6 +96,7 @@ public class PovezivanjeFirebase extends AppCompatActivity {
             public void onClick(View v) {
                 // pozivanje aktivnosti Vocepitanjeleveli1
                 Intent intent = new Intent(PovezivanjeFirebase.this, VocePitanjaLevel1Activity.class);
+                intent.putExtra("getselectedLevel", getselectedLevel);
                 startActivity(intent);
             }
         });
