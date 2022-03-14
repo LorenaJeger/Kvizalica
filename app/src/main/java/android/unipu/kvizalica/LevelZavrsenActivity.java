@@ -24,7 +24,7 @@ public class LevelZavrsenActivity extends AppCompatActivity {
 
 
 
-    private static final String FILE_NAME= "leveli.txt";
+    private static  String FILE_NAME;
     EditText mEditText;
 
     TextView ukupanBrojPitanja, tocniOdgovori, netocniOdgovori;
@@ -37,7 +37,7 @@ public class LevelZavrsenActivity extends AppCompatActivity {
 
     final String getTopic = getIntent().getStringExtra("getSelectedTopicName");
     Log.i("LevelZavrsenActivitykat", getTopic);
-
+  FILE_NAME=getTopic;
         //dohvacas varijable brtocnih i br netocnih iz voce pitanja level1
         brojTocnihOdgovora=getIntent().getIntExtra("brojTocnihOdgovora",0);
         brojNetocnihOdgovora=getIntent().getIntExtra("brojNetocnihOdgovora",0);
