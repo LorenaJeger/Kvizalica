@@ -54,7 +54,7 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         ukupanBrojPitanja.setText("Ukupan broj pitanja: "+ brPitanja);
         if(brojTocnihOdgovora >= brPitanja/2){
             save();
-            load();
+//            load();
         }
         // button sljedeci level
         sljedeciLevel = findViewById(R.id.button_sljedeciLevel);
@@ -110,32 +110,5 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         }
     }
 
-    private void load(){
-        FileInputStream fis=null;
-        try{
-            fis=openFileInput(FILE_NAME);
-            InputStreamReader isr= new InputStreamReader(fis);
-            BufferedReader br= new BufferedReader(isr);
-            StringBuilder sb= new StringBuilder();
-            String text;
-            while((text=br.readLine()) !=null ){
-                sb.append(text);
-            }
-            Log.i("citam", String.valueOf(sb));
-        } catch(FileNotFoundException e){
-            e.printStackTrace();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(fis !=null){
-                try {
-                    fis.close();
-                }
-                catch(IOException e){
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 }
