@@ -38,7 +38,7 @@
 
 
     <Button
-        android:id="@+id/voce_level1"
+        android:id="@+id/level1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/play_rounded_button"

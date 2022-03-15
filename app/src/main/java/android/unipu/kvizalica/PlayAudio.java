@@ -2,7 +2,8 @@ package android.unipu.kvizalica;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-//skripta za audio, playa audio kad su zasatvice odredeni br
+
+//skripta za audio, playa audio kad su zastavice odredeni br
 public class PlayAudio {
     private Context mContext;
     private MediaPlayer mediaPlayer;
@@ -39,7 +40,7 @@ public class PlayAudio {
     }
 
     private void playMusic(int audiofile) {
-        mediaPlayer=MediaPlayer.create(mContext,audiofile);
+        mediaPlayer = MediaPlayer.create(mContext,audiofile);
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {

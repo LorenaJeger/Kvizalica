@@ -47,8 +47,9 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
 
     //Play sound prvo objekt, flag
     private PlayAudio playAudio;
-    int FLAG=0;
+    int FLAG = 0;
     Button btn_sljedecePitanje;
+    private Object getSelected_TopicName;
 
     
     @Override
@@ -56,7 +57,8 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voce_pitanja_level1);
 
-
+        getSelected_TopicName = getIntent().getStringExtra("getselectedLevel");
+        Log.i("selectedTopicNamelev1", String.valueOf(getSelected_TopicName));
 
         playAudio = new PlayAudio(this);
         Hooks();
@@ -109,13 +111,13 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
                 FLAG = 3;
                 playAudio.setAudioforAnswer(FLAG);
                 // klikom na gumb OK vraćamo se na ChooseCategory Activity
-                   ok.setOnClickListener(new View.OnClickListener() {
+                ok.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(VocePitanjaLevel1Activity.this, ChooseCategoryActivity.class);
                             startActivity(intent);
                         }
-                   });
+                });
             }
         }.start();
     }
@@ -131,29 +133,24 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         btn_odgovor2.setText(modelclass.getOdgB());
         btn_odgovor3.setText(modelclass.getOdgC());
         btn_odgovor4.setText(modelclass.getOdgD());
-        slika= modelclass.getSlika();
+        slika = modelclass.getSlika();
         //sluzi za prikaz slike iz baze pomocu url
         Glide.with(this).load(slika).into(slika_view);
         
         naslov_pitanje.setText("Broj pitanja: " + index_pitanja + "/"+ brpitanja);
-
-
-
-
     }
-
 
 
     private void Hooks() {
 
-        naslov_pitanje=findViewById(R.id.naslov_pitanje);
+        naslov_pitanje = findViewById(R.id.naslov_pitanje);
         progressBar = findViewById(R.id.progress_bar);
         pitanje = findViewById(R.id.pitanje);
         btn_odgovor1 = findViewById(R.id.btn_odgovor1);
         btn_odgovor2 = findViewById(R.id.btn_odgovor2);
         btn_odgovor3 = findViewById(R.id.btn_odgovor3);
         btn_odgovor4 = findViewById(R.id.btn_odgovor4);
-        slika_view=findViewById(R.id.imageView);
+        slika_view = findViewById(R.id.imageView);
 
         cardpitanje = findViewById(R.id.cardpitanje);
         cardodg1 = findViewById(R.id.cardodg1);
@@ -227,10 +224,11 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     // metoda koja poziva novu aktivnost
     private void LevelZavrsen() {
         Intent intent = new Intent(VocePitanjaLevel1Activity.this, LevelZavrsenActivity.class);
-        //šaljeu se 2 varijable pomocu intent put extra u novu aktivnost LevelZavrsen
+        //šaljeu se 4 varijable pomocu intent put extra u novu aktivnost LevelZavrsen
         intent.putExtra("brojTocnihOdgovora", brojTocnihOdgovora);
         intent.putExtra("brojNetocnihOdgovora", brojNetocnihOdgovora);
         intent.putExtra("brpitanja", brpitanja);
+        intent.putExtra("getSelectedTopicName", String.valueOf(getSelected_TopicName));
 
         startActivity(intent);
     }
