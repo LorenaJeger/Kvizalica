@@ -23,10 +23,14 @@ public class ChooseCategoryActivity extends AppCompatActivity {
     // string pomoću kojeg ćemo povlačiti vrstu kategorije koja je odabrana
     private String selectedTopicName = "";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_category);
+
+
 
         // za ImageButton Brojevi
         Brojevi = findViewById(R.id.slika_kategorije_brojevi);
@@ -85,8 +89,10 @@ public class ChooseCategoryActivity extends AppCompatActivity {
                 intent.putExtra("selectedTopic", selectedTopicName);
                 startActivity(intent);
             }
+
         });
 
 
     }
+
 }

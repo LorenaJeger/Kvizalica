@@ -33,6 +33,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voce_leveli);
 
+
         // za povući vrstu kategorije iz aktivnosti ChooseCategoryActivity
         getSelectedTopicName = getIntent().getStringExtra("selectedTopic");
         Log.i("VoceLeveliActivity", getSelectedTopicName);
@@ -52,6 +53,9 @@ public class VoceLeveliActivity extends AppCompatActivity {
         // za gumb Level 2
         buttonLevel2 = findViewById(R.id.voce_level2);
         buttonLevel2.setEnabled(false);
+
+
+
 
         // za gumb Level 3
         buttonLevel3 = findViewById(R.id.voce_level3);
@@ -91,6 +95,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
                 intent.putExtra("selectedLevel", selectedLevel);
                 startActivity(intent);
             }
+
         });
 
         buttonLevel2.setOnClickListener(new View.OnClickListener() {
