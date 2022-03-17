@@ -9,8 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,6 +25,9 @@ public class PovezivanjeFirebase extends AppCompatActivity {
     Button zapocni;
     //TextView kategorija;
     TextView level;
+
+    String slikaKategorije;
+    ImageView slikaKategorije_view;
 
     public static ArrayList<ModelClass> listapitanja;
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,11 +86,11 @@ public class PovezivanjeFirebase extends AppCompatActivity {
             }
         });
 
-        // TextView
-        //kategorija = findViewById(R.id.text_Odabranakategorija);
-        //kategorija.setText(getTopicNameFirebase);
-        level = findViewById(R.id.text_Odabranilevel);
-        level.setText(getselectedLevel);
+        // za sliku
+        slikaKategorije_view = findViewById(R.id.slikaKategorije);
+
+        //Služi za prikaz slike kategorije iz baze pomoću url-a
+        Glide.with(this).load(slikaKategorije).into(slikaKategorije_view);
 
         // za gumb Igraj
         zapocni = findViewById(R.id.kreni);

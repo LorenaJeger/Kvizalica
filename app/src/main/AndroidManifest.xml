@@ -13,7 +13,8 @@
         android:theme="@style/Theme.Kvizalica">
         <activity
             android:name=".PovezivanjeFirebase"
-            android:exported="false"/>
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".LevelZavrsenActivity"
             android:exported="false"

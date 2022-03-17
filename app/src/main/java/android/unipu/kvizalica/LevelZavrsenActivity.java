@@ -26,7 +26,7 @@ public class LevelZavrsenActivity extends AppCompatActivity {
     EditText mEditText;
 
     TextView ukupanBrojPitanja, tocniOdgovori, netocniOdgovori;
-    Button sljedeciLevel, pocetniIzbornik, igrajPonovno;
+    Button pocetniIzbornik, igrajPonovno;
     int brojTocnihOdgovora, brojNetocnihOdgovora, brPitanja;
 
     @Override
@@ -58,17 +58,15 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         // igranje sljedećeg levela
         if(brojTocnihOdgovora >= brPitanja/2){
             save();  // poziva se funkcija za kreiranje datoteke
+            Toast.makeText(this, "Novi level je otključan!", Toast.LENGTH_LONG).show();
 //          // load();
         }
-
-        // button sljedeci level
-        sljedeciLevel = findViewById(R.id.button_sljedeciLevel);
-
         //button pocetni izbornik
         pocetniIzbornik = findViewById(R.id.button_pocetniIzbornik);
 
         //button igraj ponovno
         igrajPonovno = findViewById(R.id.button_igrajPonovno);
+
 
         //dodavanje listenera za gumb pocetni izbornik
         pocetniIzbornik.setOnClickListener(new View.OnClickListener() {

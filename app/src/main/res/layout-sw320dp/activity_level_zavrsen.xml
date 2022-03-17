@@ -118,47 +118,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline_text_tocniOdgovori_donji" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_button_sljedeciLevel_gornji"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_button_sljedeciLevel_donji"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.73" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_button_pocetniIzbornik_gornji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="0.68" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_button_pocetniIzbornik_donji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.83" />
+        app:layout_constraintGuide_percent="0.76" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_button_igrajPonovno_gornji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.80" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_button_igrajPonovno_donji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.93" />
+        app:layout_constraintGuide_percent="0.88" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_buttoni_lijevi"
@@ -173,20 +160,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.79" />
-
-    <Button
-        android:id="@+id/button_sljedeciLevel"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/sljedeci_level_button"
-        android:fontFamily="@font/balootammudu"
-        android:text="@string/button_sljedeci_level"
-        android:textColor="@color/bijela"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_button_sljedeciLevel_donji"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_buttoni_desni"
-        app:layout_constraintStart_toStartOf="@+id/guideline_buttoni_lijevi"
-        app:layout_constraintTop_toTopOf="@+id/guideline_button_sljedeciLevel_gornji" />
 
     <Button
         android:id="@+id/button_pocetniIzbornik"
