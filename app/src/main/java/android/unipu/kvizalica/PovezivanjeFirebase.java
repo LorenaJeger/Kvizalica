@@ -90,7 +90,19 @@ public class PovezivanjeFirebase extends AppCompatActivity {
         slikaKategorije_view = findViewById(R.id.slikaKategorije);
 
         //Služi za prikaz slike kategorije iz baze pomoću url-a
-        Glide.with(this).load(slikaKategorije).into(slikaKategorije_view);
+       if(getselectedLevel.equals("Brojevi-level1")) {
+           Glide.with(this).load("https://i.pinimg.com/564x/66/eb/ba/66ebbaecbd90426ade50cfd43fdfbe88.jpg").into(slikaKategorije_view);
+       }
+        if(getselectedLevel.equals("Voće-level1")) {
+            Glide.with(this).load("https://i.pinimg.com/736x/4e/93/83/4e9383a3531db0c67739f7bff5cc64bb.jpg").into(slikaKategorije_view);
+        }
+        if(getselectedLevel.equals("Povrće-level1")) {
+            Glide.with(this).load("https://i.pinimg.com/564x/a6/75/f0/a675f04777b0d4eaf5c65a1e274c0972.jpg").into(slikaKategorije_view);
+        }
+        if(getselectedLevel.equals("Životinje-level1")) {
+            Glide.with(this).load("https://i.pinimg.com/564x/dc/26/98/dc2698f0883cb7cc30e16171f6ee7569.jpg").into(slikaKategorije_view);
+        }
+
 
         // za gumb Igraj
         zapocni = findViewById(R.id.kreni);
