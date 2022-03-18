@@ -90,19 +90,55 @@ public class PovezivanjeFirebase extends AppCompatActivity {
         slikaKategorije_view = findViewById(R.id.slikaKategorije);
 
         //Služi za prikaz slike kategorije iz baze pomoću url-a
-       if(getselectedLevel.equals("Brojevi-level1")) {
-           Glide.with(this).load("https://i.pinimg.com/564x/66/eb/ba/66ebbaecbd90426ade50cfd43fdfbe88.jpg").into(slikaKategorije_view);
-       }
-        if(getselectedLevel.equals("Voće-level1")) {
-            Glide.with(this).load("https://i.pinimg.com/736x/4e/93/83/4e9383a3531db0c67739f7bff5cc64bb.jpg").into(slikaKategorije_view);
-        }
-        if(getselectedLevel.equals("Povrće-level1")) {
-            Glide.with(this).load("https://i.pinimg.com/564x/a6/75/f0/a675f04777b0d4eaf5c65a1e274c0972.jpg").into(slikaKategorije_view);
-        }
-        if(getselectedLevel.equals("Životinje-level1")) {
-            Glide.with(this).load("https://i.pinimg.com/564x/dc/26/98/dc2698f0883cb7cc30e16171f6ee7569.jpg").into(slikaKategorije_view);
-        }
 
+        switch (getselectedLevel){
+            case "Brojevi-level1":
+                    Glide.with(this).load("https://i.pinimg.com/564x/66/eb/ba/66ebbaecbd90426ade50cfd43fdfbe88.jpg").into(slikaKategorije_view);
+                    break;
+
+            case "Brojevi-level2":
+                Glide.with(this).load("https://i.pinimg.com/474x/f2/f0/9c/f2f09cce9b47b591487e8b819161c270.jpg").into(slikaKategorije_view);
+                break;
+
+            case "Brojevi-level3":
+                Glide.with(this).load("https://i.pinimg.com/474x/ab/0c/40/ab0c4065e7ce4508ea88f9216830c26a.jpg").into(slikaKategorije_view);
+                break;
+            case "Voće-level1":
+                Glide.with(this).load("https://i.pinimg.com/736x/4e/93/83/4e9383a3531db0c67739f7bff5cc64bb.jpg").into(slikaKategorije_view);
+                break;
+
+            case "Voće-level2":
+                Glide.with(this).load("https://i.pinimg.com/564x/be/e2/aa/bee2aa50f83b6cbdab29c7fa2b67e16b.jpg").into(slikaKategorije_view);
+                break;
+
+            case "Voće-level3":
+                Glide.with(this).load("https://i.pinimg.com/564x/77/49/89/7749896f48857bd836323cdb26c73215.jpg").into(slikaKategorije_view);
+                break;
+
+            case "Povrće-level1":
+                Glide.with(this).load("https://i.pinimg.com/564x/a6/75/f0/a675f04777b0d4eaf5c65a1e274c0972.jpg").into(slikaKategorije_view);
+                break;
+
+            case "Povrće-level2":
+                Glide.with(this).load("https://i.pinimg.com/564x/11/2b/f4/112bf4571d137148712b581e0c12b520.jpg").into(slikaKategorije_view);
+                break;
+
+            case "Povrće-level3":
+                Glide.with(this).load("https://i.pinimg.com/564x/2e/1c/ac/2e1cac0c1440a90724bd1d2f7154ee16.jpg").into(slikaKategorije_view);
+                break;
+
+            case "Životinje-level1":
+                Glide.with(this).load("https://i.pinimg.com/564x/dc/26/98/dc2698f0883cb7cc30e16171f6ee7569.jpg").into(slikaKategorije_view);
+                break;
+
+            case "Životinje-level2":
+                Glide.with(this).load("https://i.pinimg.com/564x/69/d7/4c/69d74c13276be2ca8adaf88fafc6c8f6.jpg").into(slikaKategorije_view);
+                break;
+
+            case "Životinje-level3":
+                Glide.with(this).load("https://i.pinimg.com/564x/9d/5e/5c/9d5e5cb2e36e00524b7ca1b2fbc95e28.jpg").into(slikaKategorije_view);
+                break;
+        }
 
         // za gumb Igraj
         zapocni = findViewById(R.id.kreni);

@@ -58,7 +58,7 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         // igranje sljedećeg levela
         if(brojTocnihOdgovora >= brPitanja/2){
             save();  // poziva se funkcija za kreiranje datoteke
-            Toast.makeText(this, "Novi level je otključan!", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "Novi level je otključan!", Toast.LENGTH_LONG).show();
 //          // load();
         }
         //button pocetni izbornik
