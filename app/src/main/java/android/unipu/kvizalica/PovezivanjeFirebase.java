@@ -89,7 +89,7 @@ public class PovezivanjeFirebase extends AppCompatActivity {
         // za sliku
         slikaKategorije_view = findViewById(R.id.slikaKategorije);
 
-        //Služi za prikaz slike kategorije iz baze pomoću url-a
+        //Služi za prikaz slike kategorije  pomoću url-a
 
         switch (getselectedLevel){
             case "Brojevi-level1":

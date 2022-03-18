@@ -58,8 +58,11 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         // igranje sljedećeg levela
         if(brojTocnihOdgovora >= brPitanja/2){
             save();  // poziva se funkcija za kreiranje datoteke
-//            Toast.makeText(this, "Novi level je otključan!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Novi level je otključan!", Toast.LENGTH_LONG).show();
 //          // load();
+        }
+        else {
+            Toast.makeText(this, "Odigraj ponovno za otključavanje levela!", Toast.LENGTH_LONG).show();
         }
         //button pocetni izbornik
         pocetniIzbornik = findViewById(R.id.button_pocetniIzbornik);
@@ -97,7 +100,7 @@ public class LevelZavrsenActivity extends AppCompatActivity {
             fos.write(text.getBytes());
 
 //          // EditText.getText().clear();
-            Toast.makeText(this, "Saved to"+ getFilesDir() + "/"+ FILE_NAME, Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "Saved to"+ getFilesDir() + "/"+ FILE_NAME, Toast.LENGTH_LONG).show();
         }catch (FileNotFoundException e){
             e.printStackTrace();
         } catch (IOException e) {

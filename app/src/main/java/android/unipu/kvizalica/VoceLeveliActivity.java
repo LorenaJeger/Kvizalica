@@ -36,7 +36,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
 
         // za povući vrstu kategorije iz aktivnosti ChooseCategoryActivity
         getSelectedTopicName = getIntent().getStringExtra("selectedTopic");
-        Log.i("VoceLeveliActivity", getSelectedTopicName);
+        //Log.i("VoceLeveliActivity", getSelectedTopicName);
 
 
         /*listapitanja.add(new ModelClass("koje je voce zeleno","kivi", "banana","jabuka","jagoda","kivi","slika"));
