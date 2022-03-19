@@ -20,7 +20,6 @@
         android:shadowDx="5"
         android:shadowDy="5"
         android:shadowRadius="1"
-        android:text="@string/level_jedan_zavrsen"
         android:textColor="@color/plava_level_zavrsen"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_textLevel1Zavrsen_donji"

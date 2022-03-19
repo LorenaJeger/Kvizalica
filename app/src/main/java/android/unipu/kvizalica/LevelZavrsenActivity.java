@@ -24,7 +24,7 @@ public class LevelZavrsenActivity extends AppCompatActivity {
 
     private static  String FILE_NAME;
 
-    TextView ukupanBrojPitanja, tocniOdgovori, netocniOdgovori;
+    TextView ukupanBrojPitanja, tocniOdgovori, netocniOdgovori, levelZavrsen;
     Button pocetniIzbornik, igrajPonovno;
     int brojTocnihOdgovora, brojNetocnihOdgovora, brPitanja;
 
@@ -34,8 +34,9 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_level_zavrsen);
 
         final String getTopic = getIntent().getStringExtra("getSelectedTopicName");
-        //Log.i("LevelZavrsenActivitykat", getTopic);
+        Log.i("LevelZavrsenActivitykat", getTopic);
         FILE_NAME = getTopic;
+
 
         // dohvacanje varijable brtocnih i brnetocnih iz aktivnosti VocePitanjaLevel1Activity
         brojTocnihOdgovora = getIntent().getIntExtra("brojTocnihOdgovora",0);
@@ -47,18 +48,22 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         tocniOdgovori = findViewById(R.id.text_tocniOdgovori);
         netocniOdgovori = findViewById(R.id.text_netocniOdgovori);
         ukupanBrojPitanja = findViewById(R.id.text_ukupanBrojPitanja);
-
+        levelZavrsen=findViewById(R.id.textLevel1Zavrsen);
         //postavljanje u text view dohvacenih varijabli
-        tocniOdgovori.setText("Tocni odgovori: " + brojTocnihOdgovora);
-        netocniOdgovori.setText("Netocni odgovori: " + brojNetocnihOdgovora);
+        tocniOdgovori.setText("Točni odgovori: " + brojTocnihOdgovora);
+        netocniOdgovori.setText("Netočni odgovori: " + brojNetocnihOdgovora);
         ukupanBrojPitanja.setText("Ukupan broj pitanja: "+ brPitanja);
-
+        levelZavrsen.setText(getTopic);
         // provjera ako igrač ima pola točnih odgovora da mu se omogući
         // igranje sljedećeg levela
+
         if(brojTocnihOdgovora >= brPitanja/2){
             save();  // poziva se funkcija za kreiranje datoteke
-            Toast.makeText(this, "Novi level je otključan!", Toast.LENGTH_LONG).show();
-        }
+            if(getTopic.equals("Voće-level3")||getTopic.equals("Povrće-level3")|| getTopic.equals("Brojevi-level3")||getTopic.equals("Životinje-level3")) {
+                Toast.makeText(this, "Uspješno si otključao sve levele u ovoj kategoriji!", Toast.LENGTH_LONG).show();
+                    }
+                else Toast.makeText(this, "Novi level je otključan!", Toast.LENGTH_LONG).show();
+                }
         else {
             Toast.makeText(this, "Odigraj ponovno za otključavanje levela!", Toast.LENGTH_LONG).show();
         }
