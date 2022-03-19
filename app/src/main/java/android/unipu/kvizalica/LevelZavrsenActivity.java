@@ -23,7 +23,6 @@ import java.io.InputStreamReader;
 public class LevelZavrsenActivity extends AppCompatActivity {
 
     private static  String FILE_NAME;
-    EditText mEditText;
 
     TextView ukupanBrojPitanja, tocniOdgovori, netocniOdgovori;
     Button pocetniIzbornik, igrajPonovno;
@@ -35,21 +34,21 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_level_zavrsen);
 
         final String getTopic = getIntent().getStringExtra("getSelectedTopicName");
-        Log.i("LevelZavrsenActivitykat", getTopic);
+        //Log.i("LevelZavrsenActivitykat", getTopic);
         FILE_NAME = getTopic;
 
-        //dohvacas varijable brtocnih i br netocnih iz voce pitanja level1
+        // dohvacanje varijable brtocnih i brnetocnih iz aktivnosti VocePitanjaLevel1Activity
         brojTocnihOdgovora = getIntent().getIntExtra("brojTocnihOdgovora",0);
         brojNetocnihOdgovora = getIntent().getIntExtra("brojNetocnihOdgovora",0);
         brPitanja = getIntent().getIntExtra("brpitanja",0);
-        Log.i("ukupan br tocnih", String.valueOf(brojTocnihOdgovora));
-        Log.i("ukupan br netocnih", String.valueOf(brojNetocnihOdgovora));
+        //Log.i("ukupan br tocnih", String.valueOf(brojTocnihOdgovora));
+        //Log.i("ukupan br netocnih", String.valueOf(brojNetocnihOdgovora));
 
         tocniOdgovori = findViewById(R.id.text_tocniOdgovori);
         netocniOdgovori = findViewById(R.id.text_netocniOdgovori);
         ukupanBrojPitanja = findViewById(R.id.text_ukupanBrojPitanja);
 
-        //postavljanje u text view dohvacenje varijable
+        //postavljanje u text view dohvacenih varijabli
         tocniOdgovori.setText("Tocni odgovori: " + brojTocnihOdgovora);
         netocniOdgovori.setText("Netocni odgovori: " + brojNetocnihOdgovora);
         ukupanBrojPitanja.setText("Ukupan broj pitanja: "+ brPitanja);
@@ -59,11 +58,11 @@ public class LevelZavrsenActivity extends AppCompatActivity {
         if(brojTocnihOdgovora >= brPitanja/2){
             save();  // poziva se funkcija za kreiranje datoteke
             Toast.makeText(this, "Novi level je otključan!", Toast.LENGTH_LONG).show();
-//          // load();
         }
         else {
             Toast.makeText(this, "Odigraj ponovno za otključavanje levela!", Toast.LENGTH_LONG).show();
         }
+
         //button pocetni izbornik
         pocetniIzbornik = findViewById(R.id.button_pocetniIzbornik);
 
@@ -91,16 +90,13 @@ public class LevelZavrsenActivity extends AppCompatActivity {
             }
         });
     }
-
+    // metoda za spremanje stringa u datoteku
     private void save() {
         String text = "otkljucano";
         FileOutputStream fos = null;
         try {
             fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
             fos.write(text.getBytes());
-
-//          // EditText.getText().clear();
-            //Toast.makeText(this, "Saved to"+ getFilesDir() + "/"+ FILE_NAME, Toast.LENGTH_LONG).show();
         }catch (FileNotFoundException e){
             e.printStackTrace();
         } catch (IOException e) {

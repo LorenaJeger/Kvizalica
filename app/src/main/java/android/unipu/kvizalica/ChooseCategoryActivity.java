@@ -15,7 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//Izbor kategorije
+//Aktivnost za izbor kategorije
 public class ChooseCategoryActivity extends AppCompatActivity {
 
     ImageButton Brojevi, Zivotinje, Voce, Povrce;

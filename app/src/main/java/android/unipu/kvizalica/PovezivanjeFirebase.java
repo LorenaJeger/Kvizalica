@@ -23,10 +23,7 @@ import java.util.ArrayList;
 
 public class PovezivanjeFirebase extends AppCompatActivity {
     Button zapocni;
-    //TextView kategorija;
-    TextView level;
 
-    String slikaKategorije;
     ImageView slikaKategorije_view;
 
     public static ArrayList<ModelClass> listapitanja;
@@ -37,29 +34,20 @@ public class PovezivanjeFirebase extends AppCompatActivity {
         // za povući vrstu kategorije iz aktivnosti ChooseCategoryActivity i leveli
         final String getTopicNameFirebase = getIntent().getStringExtra("selectedTopicName");
         final String getselectedLevel = getIntent().getStringExtra("selectedLevel");
-        Log.i("topic: ", getTopicNameFirebase);
-        Log.i("level: ", getselectedLevel);
+        //Log.i("topic: ", getTopicNameFirebase);
+        //Log.i("level: ", getselectedLevel);
 
         listapitanja = new ArrayList<>();
 
         // Dohvaćanje pitanja s Firebase-a
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://kvizalicajegervosten-default-rtdb.europe-west1.firebasedatabase.app/");
 
-        // Prikaz dialoga dok se dohvaćaju pitanja iz baze
-      /*  Log.i("prikaz dijaloga", "dijalog");
-        ProgressDialog progresDijalog = new ProgressDialog(VoceLeveliActivity.this);
-        progresDijalog.setCancelable(false);
-        progresDijalog.setMessage("Učitavanje...");
-        progresDijalog.show();
-*/
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // dohvaćanje svih pitanja iz Firebase-a za određenu kategoriju i određeni level
                 for(DataSnapshot dataSnapshot : snapshot.child(getselectedLevel).getChildren()) {
-                    Log.i("prvi for", "ušao");
-                    //for(DataSnapshot dt : snapshot.child(selectedLevel).getChildren()) {
-                    //Log.i("drugi for", "ušao");
+                    //Log.i("prvi for", "ušao");
                     final String getQuestion = dataSnapshot.child("Pitanje").getValue(String.class);
                     final String getOdgA = dataSnapshot.child("Odgovor1").getValue(String.class);
                     final String getOdgB = dataSnapshot.child("Odgovor2").getValue(String.class);
@@ -71,15 +59,10 @@ public class PovezivanjeFirebase extends AppCompatActivity {
                     // dodavanje podataka u listu listapitanja
                     ModelClass listaPodataka = new ModelClass(getQuestion, getOdgA, getOdgB, getOdgC, getOdgD, getTocan,getSlika);
                     listapitanja.add(listaPodataka);
-                    Log.i("listapitanja", "napunio listu");
+                    //Log.i("listapitanja", "napunio listu");
                     //Log.i("prikaz liste", listapitanja.toString());
                 }
             }
-            // sakrij dijalog
-
-            //progresDijalog.hide();
-            //}
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -90,7 +73,6 @@ public class PovezivanjeFirebase extends AppCompatActivity {
         slikaKategorije_view = findViewById(R.id.slikaKategorije);
 
         //Služi za prikaz slike kategorije  pomoću url-a
-
         switch (getselectedLevel){
             case "Brojevi-level1":
                     Glide.with(this).load("https://i.pinimg.com/564x/66/eb/ba/66ebbaecbd90426ade50cfd43fdfbe88.jpg").into(slikaKategorije_view);

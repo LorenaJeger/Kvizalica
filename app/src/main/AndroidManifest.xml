@@ -29,9 +29,6 @@
             android:parentActivityName=".ChooseCategoryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".KvizResults"
-            android:exported="false" />
-        <activity
             android:name=".ChooseCategoryActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"

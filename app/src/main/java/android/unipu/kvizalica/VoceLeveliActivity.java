@@ -24,7 +24,6 @@ public class VoceLeveliActivity extends AppCompatActivity {
     private String selectedLevel = "";  // string pomoću kojeg ćemo povlačiti level koji je odabran
     private String level = "";
     private String skupa = "";
-    private static  String FILE_NAME;
     private String sadrzajDatoteke;
     private String getSelectedTopicName;
 
@@ -39,10 +38,6 @@ public class VoceLeveliActivity extends AppCompatActivity {
         //Log.i("VoceLeveliActivity", getSelectedTopicName);
 
 
-        /*listapitanja.add(new ModelClass("koje je voce zeleno","kivi", "banana","jabuka","jagoda","kivi","slika"));
-        listapitanja.add(new ModelClass("koje je voce žuto","kivi", "banana","jabuka","jagoda","banana","slika"));
-        listapitanja.add(new ModelClass("koje je voce plavo","kivi", "banana","jabuka","borovnica","borovnica","slika"));*/
-
         // za TextView Kategorija
         odabranaKategorija = findViewById(R.id.odabranaKategorija);
         odabranaKategorija.setText(getSelectedTopicName);
@@ -53,9 +48,6 @@ public class VoceLeveliActivity extends AppCompatActivity {
         // za gumb Level 2
         buttonLevel2 = findViewById(R.id.voce_level2);
         buttonLevel2.setEnabled(false);
-
-
-
 
         // za gumb Level 3
         buttonLevel3 = findViewById(R.id.voce_level3);
@@ -75,7 +67,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
         buttonLevel1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("button Level1", "kliknuo");
+                //Log.i("button Level1", "kliknuo");
                 if(getSelectedTopicName.equals("Brojevi")) {
                     selectedLevel = "Brojevi-level1";
                 }
@@ -88,7 +80,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
                 if(getSelectedTopicName.equals("Povrće")) {
                     selectedLevel = "Povrće-level1";
                 }
-                Log.i("selectedLevel button je", selectedLevel);
+                //Log.i("selectedLevel button je", selectedLevel);
                 // pozivanje aktivnosti VocePitanjaLevel1Activity
                 Intent intent = new Intent(VoceLeveliActivity.this, PovezivanjeFirebase.class);
                 intent.putExtra("selectedTopicName", getSelectedTopicName);
@@ -101,7 +93,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
         buttonLevel2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("button Level2", "kliknuo");
+                //Log.i("button Level2", "kliknuo");
                 if(getSelectedTopicName.equals("Brojevi")) {
                     selectedLevel = "Brojevi-level2";
                 }
@@ -114,7 +106,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
                 if(getSelectedTopicName.equals("Povrće")) {
                     selectedLevel = "Povrće-level2";
                 }
-                Log.i("selectedLevel button je", selectedLevel);
+                //Log.i("selectedLevel button je", selectedLevel);
                 // pozivanje aktivnosti VocePitanjaLevel1Activity
                 Intent intent = new Intent(VoceLeveliActivity.this, PovezivanjeFirebase.class);
                 intent.putExtra("selectedTopicName", getSelectedTopicName);
@@ -127,7 +119,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
         buttonLevel3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("button Level3", "kliknuo");
+                //Log.i("button Level3", "kliknuo");
                 if(getSelectedTopicName.equals("Brojevi")) {
                     selectedLevel = "Brojevi-level3";
                 }
@@ -140,7 +132,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
                 if(getSelectedTopicName.equals("Povrće")) {
                     selectedLevel = "Povrće-level3";
                 }
-                Log.i("selectedLevel button je", selectedLevel);
+                //Log.i("selectedLevel button je", selectedLevel);
                 // pozivanje aktivnosti VocePitanjaLevel1Activity
                 Intent intent = new Intent(VoceLeveliActivity.this, PovezivanjeFirebase.class);
                 intent.putExtra("selectedTopicName", getSelectedTopicName);
@@ -157,46 +149,46 @@ public class VoceLeveliActivity extends AppCompatActivity {
     private void funkcija(Button buttonLevel) {
         level = String.valueOf(buttonLevel.getTag());
 
-        Log.i("tag", level);
+        //Log.i("tag", level);
         skupa = getSelectedTopicName + level;
-        Log.i("skupaIme", skupa);
+        //Log.i("skupaIme", skupa);
 
         File file = new File(getApplicationContext().getFilesDir(),skupa);
         if(file.exists()){
-            Log.i("postojim","postojim");
+            //Log.i("postojim","postojim");
 //            Log.i("skupa",skupa);
 
             load(skupa);
-            Log.i("sadrzajdat",sadrzajDatoteke);
+            //Log.i("sadrzajdat",sadrzajDatoteke);
             if(level.equals("-level1")){
                 if(sadrzajDatoteke.equals("otkljucano")) {
-                    Log.i("otkljucavam", "otkljucavam");
+                    //Log.i("otkljucavam", "otkljucavam");
                     buttonLevel2.setEnabled(true);
                     buttonLevel2.setBackgroundResource(R.drawable.play_rounded_button);
 
-                }  else {
-                    Log.i("nije tocno","nije tocno");
-                }
+                }  /*else {
+                    //Log.i("nije tocno","nije tocno");
+                }*/
             }
             if(level.equals("-level2")){
-                Log.i("usaosamu2","usaosam u 2");
+                //Log.i("usaosamu2","usaosam u 2");
                 if(sadrzajDatoteke.equals("otkljucano")) {
-                    Log.i("otkljucavam", "otkljucavam");
+                    //Log.i("otkljucavam", "otkljucavam");
                     buttonLevel3.setEnabled(true);
                     buttonLevel3.setBackgroundResource(R.drawable.play_rounded_button);
 
-                }  else {
+                }  /*else {
                     Log.i("nije tocno","nije tocno");
-                }
+                }*/
             }
         }
-        else{
+        /*else{
             Log.i("nepostojim","nepostojim");
             Log.i("skupa",skupa);
-        }
+        }*/
 
     }
-
+    // funkcija koja čita iz datoteke
     private void load( String FILE_NAME){
         FileInputStream fis = null;
         try{
@@ -208,7 +200,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
             while((text = br.readLine()) != null ){
                 sb.append(text);
             }
-            Log.i("citamizchoose", String.valueOf(sb));
+            //Log.i("citamizchoose", String.valueOf(sb));
             sadrzajDatoteke = String.valueOf(sb);
         } catch(FileNotFoundException e){
             e.printStackTrace();

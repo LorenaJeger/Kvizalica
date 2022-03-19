@@ -38,7 +38,6 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
     CardView cardpitanje,cardodg1,cardodg2, cardodg3,cardodg4;
 
     String slika;
-
     ImageView slika_view;
 
 
@@ -59,7 +58,7 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
         setContentView(R.layout.activity_voce_pitanja_level1);
 
         getSelected_TopicName = getIntent().getStringExtra("getselectedLevel");
-        Log.i("selectedTopicNamelev1", String.valueOf(getSelected_TopicName));
+        //Log.i("selectedTopicNamelev1", String.valueOf(getSelected_TopicName));
 
         playAudio = new PlayAudio(this);
         Hooks();
@@ -81,10 +80,9 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
         setAllData();
 
         setResetTimer();
-        //brpitanja = listapitanja.size();
 
     }
-
+    // metoda za odbrojavanje vremena
     private void setResetTimer() {
         countDownTimer = new CountDownTimer(20000,1000) {
             @Override
@@ -101,6 +99,7 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
                             Color.YELLOW, PorterDuff.Mode.SRC_IN);
                 }
             }
+            // ako je vrijeme isteklo
             @Override
             public void onFinish() {
                 Dialog dialog = new Dialog(VocePitanjaLevel1Activity.this);
@@ -122,28 +121,22 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
             }
         }.start();
     }
-
+    // metoda koja puni textView-ove podacima iz baze
     private void setAllData() {
-        /*pitanje.setText(listapitanja.get(index).getQuestion());
-        btn_odgovor1.setText(listapitanja.get(index).getOdgA());
-        btn_odgovor2.setText(listapitanja.get(index).getOdgB());
-        btn_odgovor3.setText(listapitanja.get(index).getOdgC());sx
-        btn_odgovor4.setText(listapitanja.get(index).getOdgD());*/
         pitanje.setText(modelclass.getQuestion());
         btn_odgovor1.setText(modelclass.getOdgA());
         btn_odgovor2.setText(modelclass.getOdgB());
         btn_odgovor3.setText(modelclass.getOdgC());
         btn_odgovor4.setText(modelclass.getOdgD());
         slika = modelclass.getSlika();
-        //sluzi za prikaz slike iz baze pomocu url
+        //sluzi za prikaz slike iz baze pomoću url-a
         Glide.with(this).load(slika).into(slika_view);
 
         naslov_pitanje.setText("Broj pitanja: " + index_pitanja + "/"+ brpitanja);
     }
 
-
+    // metoda za pronalazk svih view-ova po id-u
     private void Hooks() {
-
         naslov_pitanje = findViewById(R.id.naslov_pitanje);
         progressBar = findViewById(R.id.progress_bar);
         pitanje = findViewById(R.id.pitanje);
@@ -161,7 +154,7 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
 
         btn_sljedecePitanje = findViewById(R.id.button_sljedece_pitanje);
     }
-
+    // funkcija koja reagira na klik na točan odgovor
     public void TocanOdgovor(CardView cardodg1) {
         cardodg1.setBackgroundColor(getResources().getColor(R.color.tocan_odgovor_zelena));
 
@@ -176,7 +169,6 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
             btn_sljedecePitanje.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //if(index < listapitanja.size() -1) {
                     index++;
                     index_pitanja++;
                     modelclass = listapitanja.get(index);
@@ -185,14 +177,11 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
                     EnableButton();
                     timerValue = 20;
                     setResetTimer();
-                    //} else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
-                    //LevelZavrsen();
-                    //}
                 }
             });
         }
     }
-
+    // funkcija koja reagira na klik na netočan odgovor
     public void NetocanOdgovor(CardView cardodg1) {
         cardodg1.setBackgroundColor(getResources().getColor(R.color.netocan_odgovor_crvena));
         FLAG = 2;
@@ -206,7 +195,6 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
                 @Override
                 public void onClick(View v) {
                     //Log.i("br netocnih u pitanjima", String.valueOf(brojNetocnihOdgovora));
-                    //if(index < listapitanja.size() -1) {
                     index++;
                     index_pitanja++;
                     modelclass = listapitanja.get(index);
@@ -215,9 +203,6 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
                     EnableButton();
                     timerValue = 20;
                     setResetTimer();
-                    //} else {                // ako dode do kraja polja s pitanjima pozvat ce aktivnost LevelZavrsenActivity
-                    //LevelZavrsen();
-                    //}
                 }
             });
         }
@@ -253,6 +238,8 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
         cardodg3.setBackgroundColor(getResources().getColor(R.color.bijela));
         cardodg4.setBackgroundColor(getResources().getColor(R.color.bijela));
     }
+
+    // funkcija za klik na prvi ponuđeni odgovor
     public void Odgovor1Click(View view) {
         DisableButton();
         btn_sljedecePitanje.setClickable(true);
@@ -264,7 +251,7 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
         }
 
     }
-
+    // funkcija za klik na drugi ponuđeni odgovor
     public void Odgovor2Click(View view) {
         DisableButton();
         btn_sljedecePitanje.setClickable(true);
@@ -275,7 +262,7 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
             NetocanOdgovor(cardodg2);
         }
     }
-
+    // funkcija za klik na treći ponuđeni odgovor
     public void Odgovor3Click(View view) {
         DisableButton();
         btn_sljedecePitanje.setClickable(true);
@@ -286,7 +273,7 @@ public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatA
             NetocanOdgovor(cardodg3);
         }
     }
-
+    // funkcija za klik na četvrti ponuđeni odgovor
     public void Odgovor4Click(View view) {
         DisableButton();
         btn_sljedecePitanje.setClickable(true);
