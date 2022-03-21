@@ -11,7 +11,7 @@
     <string name="naslov_dialogVrijeme">Vrijeme je\nisteklo!</string>
     <string name="button_ok">OK</string>
     <string name="sljedece_pitanje">Sljedeće pitanje</string>
-    <string name="level_jedan_zavrsen"><u>Level 1 završen</u></string>
+    <string name="level_zavrsen"><u>završen</u></string>
     <string name="ukupan_broj_pitanja">Ukupan broj pitanja: </string>
     <string name="tocni_odgovori">Točni odgovori: </string>
     <string name="netocni_odgovori">Netočni odgovori: </string>
