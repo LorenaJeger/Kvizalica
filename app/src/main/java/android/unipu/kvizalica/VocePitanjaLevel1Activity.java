@@ -25,7 +25,7 @@ import com.bumptech.glide.Glide;
 import java.util.Collections;
 import java.util.List;
 
-public class VocePitanjaLevel1Activity<getSelected_TopicName> extends AppCompatActivity {
+public class VocePitanjaLevel1Activity extends AppCompatActivity {
     CountDownTimer countDownTimer;
     int timerValue = 20;
     ProgressBar progressBar;

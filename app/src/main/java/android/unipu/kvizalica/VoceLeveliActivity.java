@@ -2,9 +2,7 @@ package android.unipu.kvizalica;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -59,9 +57,9 @@ public class VoceLeveliActivity extends AppCompatActivity {
         buttonLevel3.setTag("-level3");
 
         //pozivi funkcije
-        funkcija(buttonLevel1);
-        funkcija(buttonLevel2);
-        funkcija(buttonLevel3);
+        funkcijaOtkljucajLevel(buttonLevel1);
+        funkcijaOtkljucajLevel(buttonLevel2);
+        funkcijaOtkljucajLevel(buttonLevel3);
 
         // dodavanje listenera za gumb Level 1
         buttonLevel1.setOnClickListener(new View.OnClickListener() {
@@ -146,7 +144,7 @@ public class VoceLeveliActivity extends AppCompatActivity {
     }
 
     // funkcija koja služi za otkljucavanje buttona za levele
-    private void funkcija(Button buttonLevel) {
+    private void funkcijaOtkljucajLevel(Button buttonLevel) {
         level = String.valueOf(buttonLevel.getTag());
 
         //Log.i("tag", level);
