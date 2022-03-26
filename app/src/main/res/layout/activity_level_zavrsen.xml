@@ -20,12 +20,13 @@
         android:shadowDx="5"
         android:shadowDy="5"
         android:shadowRadius="1"
+        android:text=""
         android:textColor="@color/plava_level_zavrsen"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_textLevel1Zavrsen_donji"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_textLevelZavrsen_donji"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_textLevel1Zavrsen_gornji" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_textLevelZavrsen_gornji" />
 
     <TextView
         android:id="@+id/text_ukupanBrojPitanja"
@@ -100,14 +101,14 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_button_igrajPonovno_gornji" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_textLevel1Zavrsen_gornji"
+        android:id="@+id/guideline_textLevelZavrsen_gornji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_textLevel1Zavrsen_donji"
+        android:id="@+id/guideline_textLevelZavrsen_donji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
