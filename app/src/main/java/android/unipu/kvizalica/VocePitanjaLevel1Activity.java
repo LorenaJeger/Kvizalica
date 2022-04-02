@@ -13,7 +13,6 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -58,7 +57,6 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_voce_pitanja_level1);
 
         getSelected_TopicName = getIntent().getStringExtra("getselectedLevel");
-        //Log.i("selectedTopicNamelev1", String.valueOf(getSelected_TopicName));
 
         playAudio = new PlayAudio(this);
         Hooks();
@@ -194,7 +192,6 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
             btn_sljedecePitanje.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //Log.i("br netocnih u pitanjima", String.valueOf(brojNetocnihOdgovora));
                     index++;
                     index_pitanja++;
                     modelclass = listapitanja.get(index);
@@ -210,7 +207,7 @@ public class VocePitanjaLevel1Activity extends AppCompatActivity {
     // metoda koja poziva novu aktivnost
     private void LevelZavrsen() {
         Intent intent = new Intent(VocePitanjaLevel1Activity.this, LevelZavrsenActivity.class);
-        //šaljeu se 4 varijable pomocu intent put extra u novu aktivnost LevelZavrsen
+        //šalju se 4 varijable pomocu intent put extra u novu aktivnost LevelZavrsen
         intent.putExtra("brojTocnihOdgovora", brojTocnihOdgovora);
         intent.putExtra("brojNetocnihOdgovora", brojNetocnihOdgovora);
         intent.putExtra("brpitanja", brpitanja);

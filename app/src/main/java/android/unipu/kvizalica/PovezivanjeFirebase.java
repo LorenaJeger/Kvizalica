@@ -6,11 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
@@ -34,8 +32,6 @@ public class PovezivanjeFirebase extends AppCompatActivity {
         // za povući vrstu kategorije iz aktivnosti ChooseCategoryActivity i leveli
         final String getTopicNameFirebase = getIntent().getStringExtra("selectedTopicName");
         final String getselectedLevel = getIntent().getStringExtra("selectedLevel");
-        //Log.i("topic: ", getTopicNameFirebase);
-        //Log.i("level: ", getselectedLevel);
 
         listapitanja = new ArrayList<>();
 
@@ -47,7 +43,6 @@ public class PovezivanjeFirebase extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // dohvaćanje svih pitanja iz Firebase-a za određenu kategoriju i određeni level
                 for(DataSnapshot dataSnapshot : snapshot.child(getselectedLevel).getChildren()) {
-                    //Log.i("prvi for", "ušao");
                     final String getQuestion = dataSnapshot.child("Pitanje").getValue(String.class);
                     final String getOdgA = dataSnapshot.child("Odgovor1").getValue(String.class);
                     final String getOdgB = dataSnapshot.child("Odgovor2").getValue(String.class);
@@ -59,8 +54,6 @@ public class PovezivanjeFirebase extends AppCompatActivity {
                     // dodavanje podataka u listu listapitanja
                     ModelClass listaPodataka = new ModelClass(getQuestion, getOdgA, getOdgB, getOdgC, getOdgD, getTocan,getSlika);
                     listapitanja.add(listaPodataka);
-                    //Log.i("listapitanja", "napunio listu");
-                    //Log.i("prikaz liste", listapitanja.toString());
                 }
             }
             @Override
